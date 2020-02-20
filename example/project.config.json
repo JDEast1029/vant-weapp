@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"cloudfunctionRoot": "functions/",
 	"libVersion": "2.3.0",
-	"appid": "wx1c01b35002d3ba14",
+	"appid": "wxeab3ed81664f0774",
 	"projectname": "vant-weapp",
 	"debugOptions": {
 		"hidedInDevtools": []
