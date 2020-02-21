@@ -88,7 +88,6 @@ const createMethod = (mode: string) => (options: ToastOptions | ToastContent) =>
 Toast.loading = createMethod('loading');
 Toast.success = createMethod('success');
 Toast.error = createMethod('error');
-Toast.error = createMethod('error');
 
 Toast.clear = () => {
   queue.forEach(toast => {
