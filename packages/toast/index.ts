@@ -3,9 +3,11 @@ import { McComponent } from '../common/component';
 McComponent({
   props: {
     show: Boolean,
-    mask: Boolean,
-    message: String,
-    forbidClick: Boolean,
+    maskClosable: {
+      type: Boolean,
+      value: true
+    },
+    content: String,
     zIndex: {
       type: Number,
       value: 1000
@@ -26,6 +28,13 @@ McComponent({
 
   methods: {
     // for prevent touchmove
-    noop() {}
+    noop() {},
+    handleClickMask() {
+      if (this.data.mode !== 'loading' && this.data.maskClosable) {
+        this.setData({
+          show: false
+        });
+      }
+    }
   }
 });

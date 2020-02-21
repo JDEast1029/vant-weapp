@@ -1,31 +1,29 @@
 import { isObj } from '../common/utils';
 
-type ToastMessage = string | number;
+type ToastContent = string | number;
 
 interface ToastOptions {
   show?: boolean;
-  type?: string;
-  mask?: boolean;
+  mode?: string;
+  maskCloseable?: boolean;
   zIndex?: number;
   context?: WechatMiniprogram.Component.TrivialInstance | WechatMiniprogram.Page.TrivialInstance;
   position?: string;
   duration?: number;
   selector?: string;
-  forbidClick?: boolean;
   loadingType?: string;
-  message?: ToastMessage;
+  content?: ToastContent;
   onClose?: () => void;
 }
 
 const defaultOptions = {
-  type: 'text',
-  mask: false,
-  message: '',
+  mode: 'text',
+  maskCloseable: false,
+  content: '',
   show: true,
   zIndex: 1000,
-  duration: 2000,
+  duration: 2,
   position: 'middle',
-  forbidClick: false,
   loadingType: 'circular',
   selector: '#mc-toast'
 };
@@ -33,8 +31,8 @@ const defaultOptions = {
 let queue = [];
 let currentOptions: ToastOptions = { ...defaultOptions };
 
-function parseOptions(message): ToastOptions {
-  return isObj(message) ? message : { message };
+function parseOptions(content): ToastOptions {
+  return isObj(content) ? content : { content };
 }
 
 function getContext() {
@@ -42,7 +40,7 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Component.TrivialInstance {
+function Toast(toastOptions: ToastOptions | ToastContent): WechatMiniprogram.Component.TrivialInstance {
   const options = {
     ...currentOptions,
     ...parseOptions(toastOptions)
@@ -71,25 +69,26 @@ function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Com
   toast.setData(options);
   clearTimeout(toast.timer);
 
-  if (options.duration > 0) {
+  if (options.duration * 1000 > 0) {
     toast.timer = setTimeout(() => {
       toast.clear();
       queue = queue.filter(item => item !== toast);
-    }, options.duration);
+    }, options.duration * 1000);
   }
 
   return toast;
 }
 
-const createMethod = (type: string) => (options: ToastOptions | ToastMessage) =>
+const createMethod = (mode: string) => (options: ToastOptions | ToastContent) =>
   Toast({
-    type,
+    mode,
     ...parseOptions(options)
   });
 
 Toast.loading = createMethod('loading');
 Toast.success = createMethod('success');
-Toast.fail = createMethod('fail');
+Toast.error = createMethod('error');
+Toast.error = createMethod('error');
 
 Toast.clear = () => {
   queue.forEach(toast => {

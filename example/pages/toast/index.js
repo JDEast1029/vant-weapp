@@ -11,7 +11,7 @@ Page({
   },
 
   showLoadingToast() {
-    Toast.loading({ mask: true, message: '加载中...' });
+    Toast.loading({ content: '加载中...' });
   },
 
   showSuccessToast() {
@@ -19,23 +19,22 @@ Page({
   },
 
   showFailToast() {
-    Toast.fail('失败提示');
+    Toast.error('失败提示');
   },
 
   showCustomizedToast(duration) {
     const text = second => `倒计时 ${second} 秒`;
     const toast = Toast.loading({
       duration: 0,
-      forbidClick: true,
       loadingType: 'spinner',
-      message: text(3)
+      content: text(3)
     });
 
     let second = 3;
     const timer = setInterval(() => {
       second--;
       if (second) {
-        toast.setData({ message: text(second) });
+        toast.setData({ content: text(second) });
       } else {
         clearInterval(timer);
         Toast.clear();

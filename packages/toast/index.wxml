@@ -1,8 +1,8 @@
 <mc-overlay
-  wx:if="{{ mask || forbidClick }}"
   show="{{ show }}"
   z-index="{{ zIndex }}"
-  custom-style="{{ mask ? '' : 'background-color: transparent;' }}"
+  custom-style="{{ 'background-color: transparent;' }}"
+  bind:click="handleClickMask"
 />
 <mc-transition
   show="{{ show }}"
@@ -10,22 +10,22 @@
   custom-class="mc-toast__container"
 >
   <view
-    class="mc-toast mc-toast--{{ type === 'text' ? 'text' : 'icon' }} mc-toast--{{ position }}"
+    class="mc-toast mc-toast--{{ mode === 'text' ? 'text' : 'icon' }} mc-toast--{{ position }}"
     catch:touchmove="noop"
   >
     <!-- text only -->
-    <text wx:if="{{ type === 'text' }}">{{ message }}</text>
+    <text wx:if="{{ mode === 'text' }}">{{ content }}</text>
 
     <!-- with icon -->
     <block wx:else>
       <mc-loading
-        wx:if="{{ type === 'loading' }}"
+        wx:if="{{ mode === 'loading' }}"
         color="white"
         type="{{ loadingType }}"
         custom-class="mc-toast__loading"
       />
-      <mc-icon wx:else class="mc-toast__icon" name="{{ type }}" />
-      <text wx:if="{{ message }}" class="mc-toast__text">{{ message }}</text>
+      <mc-icon wx:else class="mc-toast__icon" name="{{ mode }}" />
+      <text wx:if="{{ content }}" class="mc-toast__text">{{ content }}</text>
     </block>
 
     <slot />
