@@ -1,5 +1,5 @@
 import { McComponent } from '../common/component';
-import { isSameSecond, parseFormat, parseTimeData } from './utils';
+import { isSameSecond, parseFormat, parseTimeData, getTimestamp } from './utils';
 
 function simpleTick(fn: Function) {
   return setTimeout(fn, 30);
@@ -8,31 +8,38 @@ function simpleTick(fn: Function) {
 McComponent({
   props: {
     useSlot: Boolean,
-    millisecond: Boolean,
-    time: {
-      type: Number,
+    targetTime: {
+      type: String,
+      optionalTypes: [String, Object],
       observer: 'reset'
     },
+    serverTime: {
+      type: Number,
+      optionalTypes: [String, Object],
+      observer: 'reset'
+    },
+    // time: {
+    //   type: Number,
+    //   observer: 'reset'
+    // },
     format: {
       type: String,
       value: 'HH:mm:ss'
     },
-    autoStart: {
+    auto: {
       type: Boolean,
       value: true
     }
   },
-
   data: {
+    time: 0,
     timeData: parseTimeData(0),
     formattedTime: '0'
   },
-
   destroyed() {
     clearTimeout(this.tid);
     this.tid = null;
   },
-
   methods: {
     // 开始
     start() {
@@ -54,16 +61,21 @@ McComponent({
     // 重置
     reset() {
       this.pause();
-      this.remain = this.data.time;
+      const targetTime = getTimestamp(this.data.targetTime);
+      const serverTime = getTimestamp(this.data.serverTime);
+      this.serverOffset = serverTime ? serverTime - (new Date()).getTime() : 0;
+      const currentTime = new Date().getTime() + this.serverOffset;
+      this.remain = targetTime - currentTime;
       this.setRemain(this.remain);
 
-      if (this.data.autoStart) {
+      if (this.data.auto) {
         this.start();
       }
     },
 
     tick() {
-      if (this.data.millisecond) {
+      const millisecond = /ms/.test(this.data.format);
+      if (millisecond) {
         this.microTick();
       } else {
         this.macroTick();

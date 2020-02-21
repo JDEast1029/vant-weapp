@@ -4,6 +4,7 @@ import Toast from '../../dist/toast/toast';
 Page({
   data: {
     time: 30 * 60 * 60 * 1000,
+    targetTime: '2020-02-21 12:40:00',
     timeData: {}
   },
 

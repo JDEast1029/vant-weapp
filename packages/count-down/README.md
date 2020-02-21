@@ -148,10 +148,10 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| time | 倒计时时长，单位毫秒 | *number* | - | - |
-| format | 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒 | *string* | `HH:mm:ss` | - |
-| auto-start | 是否自动开始倒计时 | *boolean* | `true` | - |
-| millisecond | 是否开启毫秒级渲染 | *boolean* | `false` | - |
+| target-time | 目标时间 | *number*、*string*、*date* | - | - |
+| server-time | 服务器时间 | *number*、*string*、*date* | - | - |
+| format | 时间格式，DD-日，HH-时，mm-分，ss-秒，ms-毫秒 | *string* | `HH:mm:ss` | - |
+| auto | 是否自动开始倒计时 | *boolean* | `true` | - |
 | use-slot | 是否使用自定义样式插槽 | *boolean* | `false` | - |
 
 ### Events

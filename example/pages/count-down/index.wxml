@@ -1,26 +1,27 @@
 <demo-block title="基础用法">
-  <van-count-down time="{{ time }}" />
+  <van-count-down
+    target-time="{{ targetTime }}"
+  />
 </demo-block>
 
 <demo-block title="自定义格式">
   <van-count-down
-    time="{{ time }}"
+    target-time="{{ targetTime }}"
     format="DD 天 HH 时 mm 分 ss 秒"
   />
 </demo-block>
 
 <demo-block title="毫秒级渲染">
   <van-count-down
-    millisecond
-    time="{{ time }}"
-    format="HH:mm:ss:SSS"
+    target-time="{{ targetTime }}"
+    format="HH:mm:ss:ms"
   />
 </demo-block>
 
 <demo-block title="自定义样式">
   <van-count-down
     use-slot
-    time="{{ time }}"
+    target-time="{{ targetTime }}"
     bind:change="onChange"
   >
     <text class="item">{{ timeData.hours }}</text>
@@ -32,10 +33,9 @@
 <demo-block title="手动控制">
   <van-count-down
     class="control-count-down"
-    millisecond
-    time="{{ 3000 }}"
-    auto-start="{{ false }}"
-    format="ss:SSS"
+    target-time="{{ targetTime }}"
+    auto="{{ false }}"
+    format="ss:ms"
     bind:finish="finished"
   />
 

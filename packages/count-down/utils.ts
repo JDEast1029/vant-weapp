@@ -65,9 +65,20 @@ export function parseFormat(format: string, timeData: TimeData): string {
     format = format.replace('ss', padZero(seconds));
   }
 
-  return format.replace('SSS', padZero(milliseconds, 3));
+  return format.replace('ms', padZero(milliseconds, 3));
 }
 
 export function isSameSecond(time1: number, time2: number): boolean {
   return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
+}
+
+export function getTimestamp(date: any): number {
+  if (date instanceof Date) {
+    return date.getTime();
+  } if (typeof date === 'string') {
+    return Date.parse(date.replace(/-/g, '/'));
+  } if (typeof date === 'number' && date.toString().length === 10) {
+    return date * 1000;
+  }
+  return date;
 }
