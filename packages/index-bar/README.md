@@ -6,12 +6,12 @@
 
 ```json
 "usingComponents": {
-  "van-index-bar": "path/to/@vant/weapp/dist/index-bar/index",
-  "van-index-anchor": "path/to/@vant/weapp/dist/index-anchor/index"
+  "mc-index-bar": "path/to/@vant/weapp/dist/index-bar/index",
+  "mc-index-anchor": "path/to/@vant/weapp/dist/index-anchor/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
@@ -20,23 +20,23 @@
 点击索引栏时，会自动跳转到对应的`IndexAnchor`锚点位置
 
 ```html
-<van-index-bar scroll-top="{{ scrollTop }}">
+<mc-index-bar scroll-top="{{ scrollTop }}">
   <view>
-    <van-index-anchor index="A" />
-    <van-cell title="文本" />
-    <van-cell title="文本" />
-    <van-cell title="文本" />
+    <mc-index-anchor index="A" />
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
   </view>
 
   <view>
-    <van-index-anchor index="B" />
-    <van-cell title="文本" />
-    <van-cell title="文本" />
-    <van-cell title="文本" />
+    <mc-index-anchor index="B" />
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
   </view>
 
   ...
-</van-index-bar>
+</mc-index-bar>
 ```
 
 ```javascript
@@ -54,26 +54,26 @@ Page({
 可以通过`index-list`属性自定义展示的索引字符列表，
 
 ```html
-<van-index-bar
+<mc-index-bar
   scroll-top="{{ scrollTop }}"m
   index-list="{{ indexList }}"
 >
   <view>
-    <van-index-anchor index="1">标题1</van-index-anchor>
-    <van-cell title="文本" />
-    <van-cell title="文本" />
-    <van-cell title="文本" />
+    <mc-index-anchor index="1">标题1</mc-index-anchor>
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
   </view>
 
   <view>
-    <van-index-anchor index="2">标题2</van-index-anchor>
-    <van-cell title="文本" />
-    <van-cell title="文本" />
-    <van-cell title="文本" />
+    <mc-index-anchor index="2">标题2</mc-index-anchor>
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
+    <mc-cell title="文本" />
   </view>
 
   ...
-</van-index-bar>
+</mc-index-bar>
 ```
 
 ```javascript

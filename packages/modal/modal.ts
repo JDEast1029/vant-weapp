@@ -1,7 +1,7 @@
 let queue = [];
 
-type DialogAction = 'confirm' | 'cancel';
-type DialogOptions = {
+type ModalMode = 'confirm' | 'cancel';
+type ModalOptions = {
   lang?: string;
   show?: boolean;
   title?: string;
@@ -9,7 +9,7 @@ type DialogOptions = {
   zIndex?: number;
   context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
-  overlay?: boolean;
+  mask?: boolean;
   selector?: string;
   ariaLabel?: string;
   className?: string;
@@ -18,7 +18,7 @@ type DialogOptions = {
   asyncClose?: boolean;
   businessId?: number;
   sessionFrom?: string;
-  overlayStyle?: string;
+  maskStyle?: string;
   appParameter?: string;
   messageAlign?: string;
   sendMessageImg?: string;
@@ -29,21 +29,21 @@ type DialogOptions = {
   cancelButtonText?: string;
   showConfirmButton?: boolean;
   showCancelButton?: boolean;
-  closeOnClickOverlay?: boolean;
+  maskCloseable?: boolean;
   confirmButtonOpenType?: string;
 }
 
-interface Dialog {
-  (options: DialogOptions): Promise<DialogAction>;
-  alert?: (options: DialogOptions) => Promise<DialogAction>;
-  confirm?: (options: DialogOptions) => Promise<DialogAction>;
+interface Modal {
+  (options: ModalOptions): Promise<ModalMode>;
+  alert?: (options: ModalOptions) => Promise<ModalMode>;
+  confirm?: (options: ModalOptions) => Promise<ModalMode>;
   close?: () => void;
   stopLoading?: () => void;
   install?: () => void;
-  setDefaultOptions?: (options: DialogOptions) => void;
+  setDefaultOptions?: (options: ModalOptions) => void;
   resetDefaultOptions?: () => void;
-  defaultOptions?: DialogOptions;
-  currentOptions?: DialogOptions;
+  defaultOptions?: ModalOptions;
+  currentOptions?: ModalOptions;
 }
 
 function getContext() {
@@ -51,83 +51,83 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Dialog: Dialog = options => {
+const Modal: Modal = options => {
   options = {
-    ...Dialog.currentOptions,
+    ...Modal.currentOptions,
     ...options
   };
 
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();
-    const dialog = context.selectComponent(options.selector);
+    const modal = context.selectComponent(options.selector);
 
     delete options.context;
     delete options.selector;
 
-    if (dialog) {
-      dialog.setData({
+    if (modal) {
+      modal.setData({
         onCancel: reject,
         onConfirm: resolve,
         ...options
       });
-      queue.push(dialog);
+      queue.push(modal);
     } else {
-      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
+      console.warn('未找到 mc-modal 节点，请确认 selector 及 context 是否正确');
     }
   });
 };
 
-Dialog.defaultOptions = {
+Modal.defaultOptions = {
   show: true,
   title: '',
   width: null,
   message: '',
   zIndex: 100,
-  overlay: true,
-  selector: '#van-dialog',
+  mask: true,
+  selector: '#mc-modal',
   className: '',
   asyncClose: false,
   transition: 'scale',
   customStyle: '',
   messageAlign: '',
-  overlayStyle: '',
+  maskStyle: '',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
   showConfirmButton: true,
   showCancelButton: false,
-  closeOnClickOverlay: false,
+  maskCloseable: false,
   confirmButtonOpenType: ''
 };
 
-Dialog.alert = Dialog;
+Modal.alert = Modal;
 
-Dialog.confirm = options =>
-  Dialog({
+Modal.confirm = options =>
+  Modal({
     showCancelButton: true,
     ...options
   });
 
-Dialog.close = () => {
-  queue.forEach(dialog => {
-    dialog.close();
+Modal.close = () => {
+  queue.forEach(modal => {
+    modal.close();
   });
   queue = [];
 };
 
-Dialog.stopLoading = () => {
-  queue.forEach(dialog => {
-    dialog.stopLoading();
+Modal.stopLoading = () => {
+  queue.forEach(modal => {
+    modal.stopLoading();
   });
 };
 
-Dialog.setDefaultOptions = options => {
-  Object.assign(Dialog.currentOptions, options);
+Modal.setDefaultOptions = options => {
+  Object.assign(Modal.currentOptions, options);
 };
 
-Dialog.resetDefaultOptions = () => {
-  Dialog.currentOptions = { ...Dialog.defaultOptions };
+Modal.resetDefaultOptions = () => {
+  Modal.currentOptions = { ...Modal.defaultOptions };
 };
 
-Dialog.resetDefaultOptions();
+Modal.resetDefaultOptions();
 
-export default Dialog;
+export default Modal;

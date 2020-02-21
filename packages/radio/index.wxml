@@ -1,6 +1,6 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<view class="van-radio custom-class">
+<view class="mc-radio custom-class">
   <view
     wx:if="{{ labelPosition === 'left' }}"
     class="label-class {{ utils.bem('radio__label', [labelPosition, { disabled }]) }}"
@@ -8,9 +8,9 @@
   >
     <slot />
   </view>
-  <view class="van-radio__icon-wrap" style="font-size: {{ utils.addUnit(iconSize) }};" bindtap="onChange">
+  <view class="mc-radio__icon-wrap" style="font-size: {{ utils.addUnit(iconSize) }};" bindtap="onChange">
     <slot wx:if="{{ useIconSlot }}" name="icon" />
-    <van-icon
+    <mc-icon
       wx:else
       name="success"
       class="{{ utils.bem('radio__icon', [shape, { disabled, checked: value === name }]) }}"

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-circle": "path/to/@vant/weapp/dist/circle/index"
+  "mc-circle": "path/to/@vant/weapp/dist/circle/index"
 }
 ```
 
@@ -17,7 +17,7 @@
 `value`属性表示进度条的目标进度。
 
 ```html
-<van-circle value="{{ 30 }}" text="text" />
+<mc-circle value="{{ 30 }}" text="text" />
 ```
 
 ### 宽度定制
@@ -25,7 +25,7 @@
 通过`stroke-width`属性来控制进度条宽度
 
 ```html
-<van-circle value="{{ value }}" stroke-width="6" text="宽度定制" />
+<mc-circle value="{{ value }}" stroke-width="6" text="宽度定制" />
 ```
 
 ### 颜色定制
@@ -33,7 +33,7 @@
 通过`color`属性来控制进度条颜色，`layer-color`属性来控制轨道颜色
 
 ```html
-<van-circle
+<mc-circle
   value="{{ value }}"
   layer-color="#eeeeee"
   color="#ee0a24"
@@ -46,7 +46,7 @@
 `color`属性支持传入对象格式来定义渐变色
 
 ```html
-<van-circle value="{{ value }}" color="{{ gradientColor }}" text="渐变色" />
+<mc-circle value="{{ value }}" color="{{ gradientColor }}" text="渐变色" />
 ```
 
 ```javascript
@@ -66,7 +66,7 @@ Page({
 将`clockwise`设置为`false`，进度会从逆时针方向开始
 
 ```html
-<van-circle
+<mc-circle
   value="{{ value }}"
   color="#07c160"
   clockwise="{{ false }}"
@@ -79,7 +79,7 @@ Page({
 通过`size`属性设置圆环直径
 
 ```html
-<van-circle value="{{ value }}" size="120" text="大小定制" />
+<mc-circle value="{{ value }}" size="120" text="大小定制" />
 ```
 
 ## API

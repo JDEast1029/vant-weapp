@@ -1,6 +1,6 @@
 <demo-block title="基础用法">
   <van-tabs active="{{ 1 }}" bind:change="onChange">
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs4 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -8,13 +8,13 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="通过名称匹配">
   <van-tabs active="b">
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabsWithName }}"
       wx:key="index"
       name="{{ item.name }}"
@@ -23,13 +23,13 @@
       <view class="content">
         {{ '内容' + item.index}}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="横向滚动">
   <van-tabs>
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs6 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -37,13 +37,13 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="禁用标签">
   <van-tabs bind:disabled="onClickDisabled">
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs3 }}"
       wx:key="index"
       disabled="{{ index === 1 }}"
@@ -52,13 +52,13 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="样式风格">
   <van-tabs type="card" tab-class="special-tab">
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs3 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -66,13 +66,13 @@
       <view class="content-2">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="点击事件">
   <van-tabs bind:click="onClick">
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs2 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -80,13 +80,13 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="粘性布局">
   <van-tabs sticky>
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs4 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -94,13 +94,13 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="切换动画">
   <van-tabs animated>
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs4 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -108,13 +108,13 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
 <demo-block title="滑动切换">
-  <van-tabs swipeable>
-    <van-tab
+  <van-tabs swipeable animated>
+    <van-tabs-pane
       wx:for="{{ tabs4 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -122,7 +122,7 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>
 
@@ -134,7 +134,7 @@
       custom-class="right-nav"
       bind:click="onClickNavRight"
     />
-    <van-tab
+    <van-tabs-pane
       wx:for="{{ tabs4 }}"
       wx:key="index"
       title="{{ '标签 ' + item }}"
@@ -144,6 +144,6 @@
       <view class="content">
         {{ '内容' + item }}
       </view>
-    </van-tab>
+    </van-tabs-pane>
   </van-tabs>
 </demo-block>

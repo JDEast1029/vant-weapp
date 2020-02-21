@@ -6,11 +6,11 @@
 
 ```json
 "usingComponents": {
-  "van-count-down": "path/to/@vant/weapp/dist/count-down/index"
+  "mc-count-down": "path/to/@vant/weapp/dist/count-down/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
@@ -19,7 +19,7 @@
 `time`属性表示倒计时总时长，单位为毫秒
 
 ```html
-<van-count-down time="{{ time }}" />
+<mc-count-down time="{{ time }}" />
 ```
 
 ```js
@@ -35,7 +35,7 @@ Page({
 通过`format`属性设置倒计时文本的内容
 
 ```html
-<van-count-down
+<mc-count-down
   time="{{ time }}"
   format="DD 天 HH 时 mm 分 ss 秒"
 />
@@ -46,7 +46,7 @@ Page({
 倒计时默认每秒渲染一次，设置`millisecond`属性可以开启毫秒级渲染
 
 ```html
-<van-count-down
+<mc-count-down
   millisecond
   time="{{ time }}"
   format="HH:mm:ss:SSS"
@@ -58,7 +58,7 @@ Page({
 设置`use-slot`属性后可以自定义倒计时样式，需要通过`bind:change`事件获取`timeData`对象并自行渲染，格式见下方表格
 
 ```html
-<van-count-down
+<mc-count-down
   use-slot
   time="{{ time }}"
   bind:change="onChange"
@@ -66,7 +66,7 @@ Page({
   <text class="item">{{ timeData.hours }}</text>
   <text class="item">{{ timeData.minutes }}</text>
   <text class="item">{{ timeData.seconds }}</text>
-</van-count-down>
+</mc-count-down>
 ```
 
 ```js
@@ -103,7 +103,7 @@ Page({
 通过 `selectComponent` 选择器获取到组件实例后，可以调用`start`、`pause`、`reset`方法
 
 ```html
-<van-count-down
+<mc-count-down
   class="control-count-down"
   millisecond
   time="{{ 3000 }}"
@@ -112,11 +112,11 @@ Page({
   bind:finish="finished"
 />
 
-<van-grid clickable column-num="3">
-  <van-grid-item text="开始" icon="play-circle-o" bindclick="start" />
-  <van-grid-item text="暂停" icon="pause-circle-o" bindclick="pause" />
-  <van-grid-item text="重置" icon="replay" bindclick="reset" />
-</van-grid>
+<mc-grid clickable column-num="3">
+  <mc-grid-item text="开始" icon="play-circle-o" bindclick="start" />
+  <mc-grid-item text="暂停" icon="pause-circle-o" bindclick="pause" />
+  <mc-grid-item text="重置" icon="replay" bindclick="reset" />
+</mc-grid>
 ```
 
 ```js

@@ -1,9 +1,9 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
 import { addUnit } from '../common/utils';
 
-VantComponent({
+McComponent({
   mixins: [touch],
 
   props: {
@@ -59,7 +59,7 @@ VantComponent({
       this.touchMove(event);
       this.dragStatus = 'draging';
 
-      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+      this.getRect('.mc-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
         const diff = (this.deltaX / rect.width) * 100;
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
@@ -80,7 +80,7 @@ VantComponent({
 
       const { min } = this.data;
 
-      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+      this.getRect('.mc-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
         const value = ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
         this.updateValue(value, true);
       });
@@ -101,11 +101,11 @@ VantComponent({
       });
 
       if (drag) {
-        this.$emit('drag', { value });
+        this.$emit('change', { value });
       }
 
       if (end) {
-        this.$emit('change', value);
+        this.$emit('after-change', value);
       }
     },
 

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-transition": "path/to/@vant/weapp/dist/transition/index"
+  "mc-transition": "path/to/@vant/weapp/dist/transition/index"
 }
 ```
 
@@ -17,9 +17,9 @@
 将元素包裹在 transition 组件内，在元素展示/隐藏时，会有相应的过渡动画
 
 ```html
-<van-transition show="{{ show }}" custom-class="block">
+<mc-transition show="{{ show }}" custom-class="block">
   内容
-</van-transition>
+</mc-transition>
 ```
 
 ### 动画类型
@@ -27,7 +27,7 @@
 transition 组件内置了多种动画，可以通过`name`字段指定动画类型
 
 ```html
-<van-transition name="fade-up" />
+<mc-transition name="fade-up" />
 ```
 
 ### 高级用法
@@ -35,25 +35,25 @@ transition 组件内置了多种动画，可以通过`name`字段指定动画类
 可以通过外部样式类自定义过渡效果，还可以定制进入和移出的持续时间：
 
 ```html
-<van-transition
+<mc-transition
   show="{{ show }}"
   name=""
   duration="{{ { enter: 300, leave: 1000 } }}"
-  enter-class="van-enter-class"
-  enter-active-class="van-enter-active-class"
-  leave-active-class="van-leave-active-class"
-  leave-to-class="van-leave-to-class"
+  enter-class="mc-enter-class"
+  enter-active-class="mc-enter-active-class"
+  leave-active-class="mc-leave-active-class"
+  leave-to-class="mc-leave-to-class"
 />
 ```
 
 ```css
-.van-enter-active-class,
-.van-leave-active-class {
+.mc-enter-active-class,
+.mc-leave-active-class {
   transition-property: background-color, transform;
 }
 
-.van-enter-class,
-.van-leave-to-class {
+.mc-enter-class,
+.mc-leave-to-class {
   background-color: red;
   transform: rotate(-360deg) translate3d(-100%, -100%, 0);
 }

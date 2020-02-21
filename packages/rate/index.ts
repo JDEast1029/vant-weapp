@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 
-VantComponent({
+McComponent({
   field: true,
 
   classes: ['icon-class'],
@@ -75,7 +75,7 @@ VantComponent({
 
       const { clientX } = event.touches[0];
 
-      this.getRect('.van-rate__icon', true).then(
+      this.getRect('.mc-rate__icon', true).then(
         (list: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const target = list
             .sort(item => item.right - item.left)

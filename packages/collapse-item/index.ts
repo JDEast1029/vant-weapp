@@ -1,8 +1,8 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
 const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));
 
-VantComponent({
+McComponent({
   classes: ['title-class', 'content-class'],
 
   relation: {
@@ -78,7 +78,7 @@ VantComponent({
     },
 
     updateStyle(expanded: boolean) {
-      return this.getRect('.van-collapse-item__content')
+      return this.getRect('.mc-collapse-item__content')
         .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => rect.height)
         .then((height: number) => {
           if (expanded) {

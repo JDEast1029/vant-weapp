@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-steps": "path/to/@vant/weapp/dist/steps/index"
+  "mc-steps": "path/to/@vant/weapp/dist/steps/index"
 }
 ```
 
@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```html
-<van-steps
+<mc-steps
   steps="{{ steps }}"
   active="{{ active }}"
 />
@@ -50,7 +50,7 @@ Page({
 可以通过 `active-icon` 和 `active-color` 属性设置激活状态下的图标和颜色
 
 ```html
-<van-steps
+<mc-steps
   steps="{{ steps }}"
   active="{{ active }}"
   active-icon="success"
@@ -62,7 +62,7 @@ Page({
 可以通过设置`direction`属性来改变步骤条的显示方式
 
 ```html
-<van-steps
+<mc-steps
   steps="{{ steps }}"
   active="{{ active }}"
   direction="vertical"

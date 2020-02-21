@@ -5,17 +5,17 @@
   class="{{ utils.bem('dropdown-item', direction) }}"
   style="{{ wrapperStyle }}"
 >
-  <van-popup
+  <mc-popup
     show="{{ showPopup }}"
     custom-style="position: absolute;"
-    overlay-style="position: absolute;"
-    overlay="{{ overlay }}"
+    mask-style="position: absolute;"
+    mask="{{ mask }}"
     position="{{ direction === 'down' ? 'top' : 'bottom' }}"
     duration="{{ transition ? duration : 0 }}"
-    close-on-click-overlay="{{ closeOnClickOverlay }}"
-    bind:close="onClickOverlay"
+    mask-closeable="{{ maskCloseable }}"
+    bind:close="onClickMask"
   >
-    <van-cell
+    <mc-cell
       wx:for="{{ options }}"
       wx:key="value"
       data-option="{{ item }}"
@@ -26,19 +26,19 @@
     >
       <view
         slot="title"
-        class="van-dropdown-item__title"
+        class="mc-dropdown-item__title"
         style="{{ item.value === value  ? 'color:' + activeColor : '' }}"
       >
         {{ item.text }}
       </view>
-      <van-icon
+      <mc-icon
         wx:if="{{ item.value === value }}"
         name="success"
-        class="van-dropdown-item__icon"
+        class="mc-dropdown-item__icon"
         color="{{ activeColor }}"
       />
-    </van-cell>
+    </mc-cell>
 
     <slot />
-  </van-popup>
+  </mc-popup>
 </view>

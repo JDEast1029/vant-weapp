@@ -2,8 +2,8 @@
 
 <button
   id="{{ id }}"
-  class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
-  hover-class="van-button--active hover-class"
+  class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'mc-hairline--surround' : '' }}"
+  hover-class="mc-button--active hover-class"
   lang="{{ lang }}"
   style="{{ baseStyle }} {{ customStyle }}"
   open-type="{{ openType }}"
@@ -24,7 +24,7 @@
   bindopensetting="bindOpenSetting"
 >
   <block wx:if="{{ loading }}">
-    <van-loading
+    <mc-loading
       custom-class="loading-class"
       size="{{ loadingSize }}"
       type="{{ loadingType }}"
@@ -32,20 +32,20 @@
     />
     <view
       wx:if="{{ loadingText }}"
-      class="van-button__loading-text"
+      class="mc-button__loading-text"
     >
       {{ loadingText }}
     </view>
   </block>
   <block wx:else>
-    <van-icon
+    <mc-icon
       wx:if="{{ icon }}"
       size="1.2em"
       name="{{ icon }}"
-      class="van-button__icon"
+      class="mc-button__icon"
       custom-style="line-height: inherit;"
     />
-    <view class="van-button__text">
+    <view class="mc-button__text">
       <slot />
     </view>
   </block>

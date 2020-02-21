@@ -1,9 +1,9 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 
-VantComponent({
+McComponent({
   mixins: [button, openType],
   props: {
     show: Boolean,

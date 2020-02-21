@@ -1,5 +1,5 @@
-<van-picker
-  class="van-area__picker"
+<mc-picker
+  class="mc-area__picker"
   active-class="active-class"
   toolbar-class="toolbar-class"
   column-class="column-class"

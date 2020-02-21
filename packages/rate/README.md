@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-rate": "path/to/@vant/weapp/dist/rate/index"
+  "mc-rate": "path/to/@vant/weapp/dist/rate/index"
 }
 ```
 ## 代码演示
@@ -14,7 +14,7 @@
 ### 基础用法
 
 ```html
-<van-rate value="{{ value }}" bind:change="onChange" />
+<mc-rate value="{{ value }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -34,7 +34,7 @@ Page({
 ### 自定义图标
 
  ```html
-<van-rate
+<mc-rate
   value="{{ value }}"
   icon="like"
   void-icon="like-o"
@@ -45,7 +45,7 @@ Page({
 ### 自定义样式
 
 ```html
-<van-rate
+<mc-rate
   value="{{ value }}"
   size="{{ 25 }}"
   color="#ee0a24"
@@ -58,7 +58,7 @@ Page({
 ### 半星
 
 ```html
-<van-rate
+<mc-rate
   value="{{ value }}"
   size="{{ 25 }}"
   allow-half
@@ -72,7 +72,7 @@ Page({
 ### 自定义数量
 
 ```html
-<van-rate
+<mc-rate
   value="{{ value }}"
   count="{{ 6 }}"
   bind:change="onChange"
@@ -82,7 +82,7 @@ Page({
 ### 禁用状态
 
 ```html
-<van-rate
+<mc-rate
   disabled
   value="{{ value }}"
   bind:change="onChange"
@@ -92,7 +92,7 @@ Page({
 ### 只读状态
 
 ```html
-<van-rate
+<mc-rate
   readonly
   value="{{ value }}"
   bind:change="onChange"

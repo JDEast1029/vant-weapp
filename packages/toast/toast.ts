@@ -27,7 +27,7 @@ const defaultOptions = {
   position: 'middle',
   forbidClick: false,
   loadingType: 'circular',
-  selector: '#van-toast'
+  selector: '#mc-toast'
 };
 
 let queue = [];
@@ -52,7 +52,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Com
   const toast = context.selectComponent(options.selector);
 
   if (!toast) {
-    console.warn('未找到 van-toast 节点，请确认 selector 及 context 是否正确');
+    console.warn('未找到 mc-toast 节点，请确认 selector 及 context 是否正确');
     return;
   }
 

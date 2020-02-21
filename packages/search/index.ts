@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 
-VantComponent({
+McComponent({
   field: true,
 
   classes: ['field-class', 'input-class', 'cancel-class'],

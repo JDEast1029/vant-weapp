@@ -2,7 +2,7 @@
   <van-slider
     value="50"
     custom-class="slider"
-    bind:change="onChange"
+    bind:after-change="onChange"
   />
 </demo-block>
 
@@ -11,7 +11,7 @@
     custom-class="slider"
     min="-50"
     max="50"
-    bind:change="onChange"
+    bind:after-change="onChange"
   />
 </demo-block>
 
@@ -28,7 +28,7 @@
     custom-class="slider"
     value="50"
     step="10"
-    bind:change="onChange"
+    bind:after-change="onChange"
   />
 </demo-block>
 
@@ -47,7 +47,7 @@
     custom-class="slider"
     use-button-slot
     active-color="#ee0a24"
-    bind:drag="onDrag"
+    bind:change="onDrag"
   >
     <view class="custom-button" slot="button">
       {{ currentValue }}

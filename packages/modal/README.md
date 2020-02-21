@@ -1,4 +1,4 @@
-# Dialog 弹出框
+# Modal 弹出框
 
 ### 介绍
 
@@ -12,7 +12,7 @@
 
 ```json
 "usingComponents": {
-  "van-dialog": "path/to/@vant/weapp/dist/dialog/index"
+  "mc-modal": "path/to/@vant/weapp/dist/modal/index"
 }
 ```
 
@@ -23,20 +23,20 @@
 用于提示一些消息，只包含一个确认按钮
 
 ```html
-<van-dialog id="van-dialog" />
+<mc-modal id="mc-modal" />
 ```
 
 ```javascript
-import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+import Modal from 'path/to/@vant/weapp/dist/modal/modal';
 
-Dialog.alert({
+Modal.alert({
   title: '标题',
   message: '弹窗内容'
 }).then(() => {
   // on close
 });
 
-Dialog.alert({
+Modal.alert({
   message: '弹窗内容'
 }).then(() => {
   // on close
@@ -48,7 +48,7 @@ Dialog.alert({
 用于确认消息，包含取消和确认按钮
 
 ```javascript
-Dialog.confirm({
+Modal.confirm({
   title: '标题',
   message: '弹窗内容'
 }).then(() => {
@@ -60,30 +60,30 @@ Dialog.confirm({
 
 ### 异步关闭
 
-设置`asyncClose`属性开启异步关闭，开启后可以手动调用`Dialog.close`方法关闭弹窗
+设置`asyncClose`属性开启异步关闭，开启后可以手动调用`Modal.close`方法关闭弹窗
 
 ```javascript
-Dialog.confirm({
+Modal.confirm({
   title: '标题',
   message: '弹窗内容'
   asyncClose: true
 })
   .then(() => {
     setTimeout(() => {
-      Dialog.close();
+      Modal.close();
     }, 1000);
   })
   .catch(() => {
-    Dialog.close();
+    Modal.close();
   });
 ```
 
 ### 组件调用
 
-通过组件调用 Dialog 时，可以实现自定义弹窗内容、监听微信开放能力回调事件等功能，具体参考下例
+通过组件调用 Modal 时，可以实现自定义弹窗内容、监听微信开放能力回调事件等功能，具体参考下例
 
 ```html
-<van-dialog
+<mc-modal
   use-slot
   title="标题"
   show="{{ show }}"
@@ -93,7 +93,7 @@ Dialog.confirm({
   bind:getuserinfo="getUserInfo"
 >
   <image src="https://img.yzcdn.cn/1.jpg" />
-</van-dialog>
+</mc-modal>
 ```
 
 ```js
@@ -118,17 +118,17 @@ Page({
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
-| Dialog | `options` | `Promise` | 展示弹窗 |
-| Dialog.alert | `options` | `Promise` | 展示消息提示弹窗 |
-| Dialog.confirm | `options` | `Promise` | 展示消息确认弹窗 |
-| Dialog.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Dialog 生效 |
-| Dialog.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Dialog 生效 |
-| Dialog.close | - | `void` | 关闭弹窗 |
-| Dialog.stopLoading | - | `void` | 停止按钮的加载状态 |
+| Modal | `options` | `Promise` | 展示弹窗 |
+| Modal.alert | `options` | `Promise` | 展示消息提示弹窗 |
+| Modal.confirm | `options` | `Promise` | 展示消息确认弹窗 |
+| Modal.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Modal 生效 |
+| Modal.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Modal 生效 |
+| Modal.close | - | `void` | 关闭弹窗 |
+| Modal.stopLoading | - | `void` | 停止按钮的加载状态 |
 
 ### Options
 
-通过函数调用 Dialog 时，支持传入以下选项：
+通过函数调用 Modal 时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
@@ -137,9 +137,9 @@ Page({
 | message | 文本内容，支持通过`\n`换行 | *string* | - | 1.0.0 |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | zIndex | z-index 层级 | *number* | `100` | - |
-| className | 自定义类名，dialog在自定义组件内时无效 | *string* | '' | - |
+| className | 自定义类名，modal在自定义组件内时无效 | *string* | '' | - |
 | customStyle | 自定义样式 | *string* | '' | - |
-| selector | 自定义选择器 | *string* | `van-dialog` | - |
+| selector | 自定义选择器 | *string* | `mc-modal` | - |
 | showConfirmButton | 是否展示确认按钮 | *boolean* | `true` | - |
 | showCancelButton | 是否展示取消按钮 | *boolean* | `false` | - |
 | confirmButtonText | 确认按钮的文案 | *string* | `确认` | - |
@@ -169,7 +169,7 @@ Page({
 
 ### Props
 
-通过组件调用 Dialog 时，支持以下 Props:
+通过组件调用 Modal 时，支持以下 Props:
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -179,7 +179,7 @@ Page({
 | message | 文本内容，支持通过`\n`换行 | *string* | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` |
 | z-index | z-index 层级 | *number* | `100` |
-| class-name | 自定义类名，dialog在自定义组件内时无效 | *string* | '' |
+| class-name | 自定义类名，modal在自定义组件内时无效 | *string* | '' |
 | custom-style | 自定义样式 | *string* | '' |
 | show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` |
 | show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` |

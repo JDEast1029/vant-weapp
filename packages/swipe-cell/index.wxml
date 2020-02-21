@@ -1,5 +1,5 @@
 <view
-  class="van-swipe-cell"
+  class="mc-swipe-cell"
   data-key="cell"
   catchtap="onClick"
   bindtouchstart="startDrag"
@@ -9,11 +9,11 @@
   bindtouchcancel="endDrag"
 >
   <view style="{{ wrapperStyle }}">
-    <view wx:if="{{ leftWidth }}" class="van-swipe-cell__left" data-key="left" catch:tap="onClick">
+    <view wx:if="{{ leftWidth }}" class="mc-swipe-cell__left" data-key="left" catch:tap="onClick">
       <slot name="left" />
     </view>
     <slot />
-    <view wx:if="{{ rightWidth }}" class="van-swipe-cell__right" data-key="right" catch:tap="onClick">
+    <view wx:if="{{ rightWidth }}" class="mc-swipe-cell__right" data-key="right" catch:tap="onClick">
       <slot name="right" />
     </view>
   </view>

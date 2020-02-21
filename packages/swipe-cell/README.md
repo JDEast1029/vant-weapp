@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-swipe-cell": "path/to/@vant/weapp/dist/swipe-cell/index"
+  "mc-swipe-cell": "path/to/@vant/weapp/dist/swipe-cell/index"
 }
 ```
 
@@ -15,13 +15,13 @@
 ### 基础用法
 
 ```html
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+<mc-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
   <view slot="left">选择</view>
-  <van-cell-group>
-    <van-cell title="单元格" value="内容" />
-  </van-cell-group>
+  <mc-cell-group>
+    <mc-cell title="单元格" value="内容" />
+  </mc-cell-group>
   <view slot="right">删除</view>
-</van-swipe-cell>
+</mc-swipe-cell>
 ```
 
 ### 异步关闭
@@ -29,13 +29,13 @@
 当开启`async-close`时， 通过绑定`close`事件，可以自定义两侧滑动内容点击时的关闭行为
 
 ```html
-<van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">
+<mc-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">
   <view slot="left">选择</view>
-  <van-cell-group>
-    <van-cell title="单元格" value="内容" />
-  </van-cell-group>
+  <mc-cell-group>
+    <mc-cell title="单元格" value="内容" />
+  </mc-cell-group>
   <view slot="right">删除</view>
-</van-swipe-cell>
+</mc-swipe-cell>
 ```
 
 ```js
@@ -48,7 +48,7 @@ Page({
         instance.close();
         break;
       case 'right':
-        Dialog.confirm({
+        Modal.confirm({
           message: '确定删除吗？'
         }).then(() => {
           instance.close();
@@ -62,13 +62,13 @@ Page({
 ### 主动打开
 
 ```html
-<van-swipe-cell id="swipe-cell2" right-width="{{ 65 }}" left-width="{{ 65 }}" name="示例" bind:open="onOpen" >
-    <view slot="left" class="van-swipe-cell__left">选择</view>
-    <van-cell-group>
-      <van-cell title="单元格" value="内容" />
-    </van-cell-group>
-    <view slot="right" class="van-swipe-cell__right">删除</view>
-  </van-swipe-cell>
+<mc-swipe-cell id="swipe-cell2" right-width="{{ 65 }}" left-width="{{ 65 }}" name="示例" bind:open="onOpen" >
+    <view slot="left" class="mc-swipe-cell__left">选择</view>
+    <mc-cell-group>
+      <mc-cell title="单元格" value="内容" />
+    </mc-cell-group>
+    <view slot="right" class="mc-swipe-cell__right">删除</view>
+  </mc-swipe-cell>
 ```
 
 ```js

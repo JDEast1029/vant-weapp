@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { GREEN, GRAY_DARK } from '../common/color';
 
-VantComponent({
+McComponent({
   classes: ['desc-class'],
 
   props: {

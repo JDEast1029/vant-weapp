@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "van-transition": "../transition/index"
+    "mc-transition": "../transition/index"
   }
 }

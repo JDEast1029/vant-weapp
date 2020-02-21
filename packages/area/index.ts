@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { pickerProps } from '../picker/shared';
 import { Weapp } from 'definitions/weapp';
 
@@ -9,7 +9,7 @@ type AreaItem = {
 
 const COLUMNSPLACEHOLDERCODE = '000000';
 
-VantComponent({
+McComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
   props: {
@@ -64,7 +64,7 @@ VantComponent({
   methods: {
     getPicker() {
       if (this.picker == null) {
-        this.picker = this.selectComponent('.van-area__picker');
+        this.picker = this.selectComponent('.mc-area__picker');
       }
       return this.picker;
     },

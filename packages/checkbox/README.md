@@ -5,8 +5,8 @@
 
 ```json
 "usingComponents": {
-  "van-checkbox": "path/to/@vant/weapp/dist/checkbox/index",
-  "van-checkbox-group": "path/to/@vant/weapp/dist/checkbox-group/index"
+  "mc-checkbox": "path/to/@vant/weapp/dist/checkbox/index",
+  "mc-checkbox-group": "path/to/@vant/weapp/dist/checkbox-group/index"
 }
 ```
 
@@ -17,7 +17,7 @@
 通过`value`绑定复选框的勾选状态
 
 ```html
-<van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
+<mc-checkbox value="{{ checked }}" bind:change="onChange">复选框</mc-checkbox>
 ```
 
 ```js
@@ -39,9 +39,9 @@ Page({
 通过设置`disabled`属性可以禁用复选框
 
 ```html
-<van-checkbox disabled value="{{ checked }}" bind:change="onChange">
+<mc-checkbox disabled value="{{ checked }}" bind:change="onChange">
   复选框
-</van-checkbox>
+</mc-checkbox>
 ```
 
 ### 禁用文本点击
@@ -49,7 +49,7 @@ Page({
 通过设置`label-disabled`属性可以禁用复选框文本点击
 
 ```html
-<van-checkbox value="{{ checked }}" label-disabled>复选框</van-checkbox>
+<mc-checkbox value="{{ checked }}" label-disabled>复选框</mc-checkbox>
 ```
 
 ### 自定义形状
@@ -57,9 +57,9 @@ Page({
 将`shape`属性设置为`square`，复选框的形状会变成方形
 
  ```html
-<van-checkbox value="{{ checked }}" shape="square" bind:change="onChange">
+<mc-checkbox value="{{ checked }}" shape="square" bind:change="onChange">
   复选框
-</van-checkbox>
+</mc-checkbox>
 ```
 
 ### 自定义颜色
@@ -67,9 +67,9 @@ Page({
 通过`checked-color`属性可以自定义选中状态下的图标颜色
 
  ```html
-<van-checkbox value="{{ checked }}" checked-color="#07c160" bind:change="onChange">
+<mc-checkbox value="{{ checked }}" checked-color="#07c160" bind:change="onChange">
   复选框
-</van-checkbox>
+</mc-checkbox>
 ```
 
 ### 自定义大小
@@ -77,7 +77,7 @@ Page({
 通过`icon-size`属性可以自定义图标的大小
 
 ```html
-<van-checkbox value="{{ checked }}" icon-size="25px">复选框</van-checkbox>
+<mc-checkbox value="{{ checked }}" icon-size="25px">复选框</mc-checkbox>
 ```
 
 ### 自定义图标
@@ -85,10 +85,10 @@ Page({
 通过 icon 插槽自定义图标
 
 ```html
-<van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange">
+<mc-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange">
   自定义图标
   <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" />
-</van-checkbox>
+</mc-checkbox>
 ```
 
 ```js
@@ -109,14 +109,14 @@ Page({
 
 ### 复选框组
 
-需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
+需要与`mc-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`mc-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
 
 ```html
-<van-checkbox-group value="{{ result }}" bind:change="onChange">
-  <van-checkbox name="a">复选框 a</van-checkbox>
-  <van-checkbox name="b">复选框 b</van-checkbox>
-  <van-checkbox name="c">复选框 c</van-checkbox>
-</van-checkbox-group>
+<mc-checkbox-group value="{{ result }}" bind:change="onChange">
+  <mc-checkbox name="a">复选框 a</mc-checkbox>
+  <mc-checkbox name="b">复选框 b</mc-checkbox>
+  <mc-checkbox name="c">复选框 c</mc-checkbox>
+</mc-checkbox-group>
 ```
 
 ```javascript
@@ -136,11 +136,11 @@ Page({
 ### 设置最大可选数
 
 ```html
-<van-checkbox-group value="{{ result }}" bind:change="onChange" max="{{ 2 }}">
-  <van-checkbox name="a">复选框 a</van-checkbox>
-  <van-checkbox name="b">复选框 b</van-checkbox>
-  <van-checkbox name="c">复选框 c</van-checkbox>
-</van-checkbox-group>
+<mc-checkbox-group value="{{ result }}" bind:change="onChange" max="{{ 2 }}">
+  <mc-checkbox name="a">复选框 a</mc-checkbox>
+  <mc-checkbox name="b">复选框 b</mc-checkbox>
+  <mc-checkbox name="c">复选框 c</mc-checkbox>
+</mc-checkbox-group>
 ```
 
 ### 搭配单元格组件使用
@@ -148,9 +148,9 @@ Page({
 此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
 
 ```html
-<van-checkbox-group value="{{ result }}" bind:change="onChange">
-  <van-cell-group >
-    <van-cell
+<mc-checkbox-group value="{{ result }}" bind:change="onChange">
+  <mc-cell-group >
+    <mc-cell
       wx:for="{{ list }}"
       wx:key="index"
       title="复选框 {{ item }}"
@@ -159,10 +159,10 @@ Page({
       data-index="{{ index }}"
       bind:click="toggle"
     >
-      <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item }}" />
-    </van-cell>
-  </van-cell-group>
-</van-checkbox-group>
+      <mc-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item }}" />
+    </mc-cell>
+  </mc-cell-group>
+</mc-checkbox-group>
 ```
 
 ```js

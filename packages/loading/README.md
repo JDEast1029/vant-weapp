@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-loading": "path/to/@vant/weapp/dist/loading/index"
+  "mc-loading": "path/to/@vant/weapp/dist/loading/index"
 }
 ```
 
@@ -15,27 +15,27 @@
 ### 加载类型
 
 ```html
-<van-loading />
-<van-loading type="spinner" />
+<mc-loading />
+<mc-loading type="spinner" />
 ```
 
 ### 自定义颜色
 
 ```html
-<van-loading color="#1989fa" />
-<van-loading type="spinner" color="#1989fa" />
+<mc-loading color="#1989fa" />
+<mc-loading type="spinner" color="#1989fa" />
 ```
 
 ### 加载文案
 
 ```html
-<van-loading size="24px">加载中...</van-loading>
+<mc-loading size="24px">加载中...</mc-loading>
 ```
 
 ### 垂直排列
 
 ```html
-<van-loading size="24px" vertical>加载中...</van-loading>
+<mc-loading size="24px" vertical>加载中...</mc-loading>
 ```
 
 ## API

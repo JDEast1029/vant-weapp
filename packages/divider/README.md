@@ -10,52 +10,52 @@
 
 ```json
 "usingComponents": {
-  "van-divider": "path/to/@vant/weapp/dist/divider/index"
+  "mc-divider": "path/to/@vant/weapp/dist/divider/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
 ### 基础用法
 
 ```html
-<van-divider />
+<mc-divider />
 ```
 
 ### 使用hairline
 
 ```html
-<van-divider hairline />
+<mc-divider hairline />
 ```
 
 ### 虚线
 
 ```html
-<van-divider dashed />
+<mc-divider dashed />
 ```
 
 ### 文本位置
 
 ```html
-<van-divider contentPosition="center">文本</van-divider>
-  <van-divider contentPosition="left">文本</van-divider>
-  <van-divider contentPosition="right">文本</van-divider>
+<mc-divider contentPosition="center">文本</mc-divider>
+  <mc-divider contentPosition="left">文本</mc-divider>
+  <mc-divider contentPosition="right">文本</mc-divider>
 ```
 
 ### 自定义属性
 
 ```html
-<van-divider contentPosition="center" textColor="#1989fa">文本颜色</van-divider>
-<van-divider contentPosition="center" borderColor="#1989fa">border颜色</van-divider>
-<van-divider contentPosition="center" fontSize="18">字体大小</van-divider>
+<mc-divider contentPosition="center" textColor="#1989fa">文本颜色</mc-divider>
+<mc-divider contentPosition="center" borderColor="#1989fa">border颜色</mc-divider>
+<mc-divider contentPosition="center" fontSize="18">字体大小</mc-divider>
 ```
 
 ### 自定义样式
 
 ```html
-<van-divider contentPosition="center" customStyle="color: #1989fa;border-color: #1989fa;font-size: 18px;">文本</van-divider>
+<mc-divider contentPosition="center" customStyle="color: #1989fa;border-color: #1989fa;font-size: 18px;">文本</mc-divider>
 ```
 
 ## API

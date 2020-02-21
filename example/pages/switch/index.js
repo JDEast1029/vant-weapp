@@ -1,5 +1,5 @@
 import Page from '../../common/page';
-import Dialog from '../../dist/dialog/dialog';
+import Modal from '../../dist/modal/modal';
 
 Page({
   data: {
@@ -12,7 +12,7 @@ Page({
   },
 
   onChange2({ detail }) {
-    Dialog.confirm({
+    Modal.confirm({
       title: '提示',
       message: '是否切换开关？'
     }).then((res) => {

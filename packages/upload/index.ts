@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { isImageFile, isVideo } from './utils';
 
-VantComponent({
+McComponent({
   props: {
     disabled: Boolean,
     multiple: Boolean,

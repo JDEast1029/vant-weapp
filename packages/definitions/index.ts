@@ -13,7 +13,7 @@ export type CombinedComponentInstance<
     data: Data & RecordToAny<Props>;
   };
 
-export interface VantComponentOptions<Data, Props, Methods, Instance> {
+export interface McComponentOptions<Data, Props, Methods, Instance> {
   data?: Data;
   field?: boolean;
   classes?: string[];

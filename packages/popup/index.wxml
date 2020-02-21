@@ -1,12 +1,12 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<van-overlay
-  wx:if="{{ overlay }}"
+<mc-overlay
+  wx:if="{{ mask }}"
   show="{{ show }}"
   z-index="{{ zIndex }}"
-  custom-style="{{ overlayStyle }}"
+  custom-style="{{ maskStyle }}"
   duration="{{ duration }}"
-  bind:click="onClickOverlay"
+  bind:click="onClickMask"
 />
 <view
   wx:if="{{ inited }}"
@@ -15,10 +15,10 @@
   bind:transitionend="onTransitionEnd"
 >
   <slot />
-  <van-icon
+  <mc-icon
     wx:if="{{ closeable }}"
     name="{{ closeIcon }}"
-    class="van-popup__close-icon van-popup__close-icon--{{ closeIconPosition }}"
+    class="mc-popup__close-icon mc-popup__close-icon--{{ closeIconPosition }}"
     bind:tap="onClickCloseIcon"
   />
 </view>

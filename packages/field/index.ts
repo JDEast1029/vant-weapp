@@ -1,8 +1,8 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { getSystemInfoSync } from '../common/utils';
 
-VantComponent({
+McComponent({
   field: true,
 
   classes: ['input-class', 'right-icon-class'],

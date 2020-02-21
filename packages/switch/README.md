@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-switch": "path/to/@vant/weapp/dist/switch/index"
+  "mc-switch": "path/to/@vant/weapp/dist/switch/index"
 }
 ```
 
@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```html
-<van-switch checked="{{ checked }}" bind:change="onChange" />
+<mc-switch checked="{{ checked }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -34,25 +34,25 @@ Page({
 ### 禁用状态
 
 ```html
-<van-switch checked="{{ checked }}" disabled />
+<mc-switch checked="{{ checked }}" disabled />
 ```
 
 ### 加载状态
 
 ```html
-<van-switch checked="{{ checked }}" loading />
+<mc-switch checked="{{ checked }}" loading />
 ```
 
 ### 自定义大小
 
 ```html
-<van-switch checked="{{ checked }}" size="24px" />
+<mc-switch checked="{{ checked }}" size="24px" />
 ```
 
 ### 自定义颜色
 
 ```html
-<van-switch
+<mc-switch
   checked="{{ checked }}"
   active-color="#07c160"
   inactive-color="#ee0a24"
@@ -62,7 +62,7 @@ Page({
 ### 异步控制
 
 ```html
-<van-switch
+<mc-switch
   checked="{{ checked }}"
   bind:change="onChange"
 />
@@ -95,7 +95,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | name | 在表单内提交时的标识符 | *string* | - | - |
-| checked | 开关选中状态 | *any* | `false` | - |
+| value | 开关选中状态 | *any* | `false` | - |
 | loading | 是否为加载状态 | *boolean* | `false` | - |
 | disabled | 是否为禁用状态 | *boolean* | `false` | - |
 | size | 开关尺寸 | *string* | `30px` | - |

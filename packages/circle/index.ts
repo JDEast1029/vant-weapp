@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { isObj } from '../common/utils';
 import { BLUE, WHITE } from '../common/color';
 
@@ -9,7 +9,7 @@ const PERIMETER = 2 * Math.PI;
 const BEGIN_ANGLE = -Math.PI / 2;
 const STEP = 1;
 
-VantComponent({
+McComponent({
   props: {
     text: String,
     lineCap: {
@@ -56,7 +56,7 @@ VantComponent({
   methods: {
     getContext() {
       if (!this.ctx) {
-        this.ctx = wx.createCanvasContext('van-circle', this);
+        this.ctx = wx.createCanvasContext('mc-circle', this);
       }
       return this.ctx;
     },

@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { addUnit, isDef } from '../common/utils';
 
@@ -11,7 +11,7 @@ function add(num1: number, num2: number): number {
   return Math.round((num1 + num2) * cardinal) / cardinal;
 }
 
-VantComponent({
+McComponent({
   field: true,
 
   classes: ['input-class', 'plus-class', 'minus-class'],

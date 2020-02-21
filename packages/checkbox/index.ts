@@ -1,11 +1,11 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
 function emit(target: WechatMiniprogram.Component.TrivialInstance, value: boolean | any[]) {
   target.$emit('input', value);
   target.$emit('change', value);
 }
 
-VantComponent({
+McComponent({
   field: true,
 
   relation: {

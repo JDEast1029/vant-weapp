@@ -6,14 +6,14 @@
 
 ```json
 "usingComponents": {
-  "van-slider": "path/to/@vant/weapp/dist/slider/index"
+  "mc-slider": "path/to/@vant/weapp/dist/slider/index"
 }
 ```
 
 ### 基本用法
 
 ```html
-<van-slider value="50" bind:change="onChange" />
+<mc-slider value="50" bind:change="onChange" />
 ```
 
 ```js
@@ -30,25 +30,25 @@ Page({
 ### 指定选择范围
 
 ```html
-<van-slider min="-50" max="50" />
+<mc-slider min="-50" max="50" />
 ```
 
 ### 禁用
 
 ```html
-<van-slider value="50" disabled />
+<mc-slider value="50" disabled />
 ```
 
 ### 指定步长
 
 ```html
-<van-slider value="50" step="10" />
+<mc-slider value="50" step="10" />
 ```
 
 ### 自定义样式
 
 ```html
-<van-slider
+<mc-slider
   value="50"
   bar-height="4px"
   active-color="#ee0a24"
@@ -58,7 +58,7 @@ Page({
 ### 自定义按钮
 
 ```html
-<van-slider
+<mc-slider
   value="{{ currentValue }}"
   use-button-slot
   bind:drag="onDrag"
@@ -66,7 +66,7 @@ Page({
   <view class="custom-button" slot="button">
     {{ currentValue }}/100
   </view>
-</van-slider>
+</mc-slider>
 ```
 
 ```js
@@ -102,8 +102,8 @@ Page({
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:drag | 拖动进度条时触发 | event.detail.value: 当前进度 |
-| bind:change | 进度值改变后触发 | event.detail: 当前进度 |
+| bind:change | 拖动进度条时触发 | event.detail.value: 当前进度 |
+| bind:after-change | 进度值改变后触发 | event.detail: 当前进度 |
 | bind:drag-start | 开始拖动时触发 | - |
 | bind:drag-end | 结束拖动时触发 | - |
 

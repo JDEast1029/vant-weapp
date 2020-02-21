@@ -1,6 +1,6 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
-VantComponent({
+McComponent({
   props: {
     dot: Boolean,
     info: null,
@@ -9,7 +9,7 @@ VantComponent({
     customStyle: String,
     classPrefix: {
       type: String,
-      value: 'van-icon'
+      value: 'mc-icon'
     },
     name: {
       type: String,

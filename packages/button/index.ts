@@ -1,8 +1,8 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 
-VantComponent({
+McComponent({
   mixins: [button, openType],
 
   classes: ['hover-class', 'loading-class'],

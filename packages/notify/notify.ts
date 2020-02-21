@@ -16,7 +16,7 @@ interface NotifyOptions {
 }
 
 const defaultOptions = {
-  selector: '#van-notify',
+  selector: '#mc-notify',
   type: 'danger',
   message: '',
   background: '',
@@ -53,7 +53,7 @@ export default function Notify(options: NotifyOptions | string) {
     return notify;
   }
 
-  console.warn('未找到 van-notify 节点，请确认 selector 及 context 是否正确');
+  console.warn('未找到 mc-notify 节点，请确认 selector 及 context 是否正确');
 }
 
 Notify.clear = function(options?: NotifyOptions) {

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-card": "path/to/@vant/weapp/dist/card/index"
+  "mc-card": "path/to/@vant/weapp/dist/card/index"
 }
 ```
 
@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```html
-<van-card
+<mc-card
   num="2"
   price="2.00"
   desc="描述信息"
@@ -29,7 +29,7 @@
 可以通过插槽添加定制内容
 
 ```html
-<van-card
+<mc-card
   num="2"
   tag="标签"
   price="10.00"
@@ -38,10 +38,10 @@
   thumb="{{ imageURL }}"
 >
   <view slot="footer">
-    <van-button size="mini">按钮</van-button>
-    <van-button size="mini">按钮</van-button>
+    <mc-button size="mini">按钮</mc-button>
+    <mc-button size="mini">按钮</mc-button>
   </view>
-</van-card>
+</mc-card>
 ```
 
 ## API

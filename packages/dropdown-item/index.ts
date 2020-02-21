@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 
-VantComponent({
+McComponent({
   field: true,
 
   relation: {
@@ -51,23 +51,23 @@ VantComponent({
     updateDataFromParent() {
       if (this.parent) {
         const {
-          overlay,
+          mask,
           duration,
           activeColor,
-          closeOnClickOverlay,
+          maskCloseable,
           direction
         } = this.parent.data;
         this.setData({
-          overlay,
+          mask,
           duration,
           activeColor,
-          closeOnClickOverlay,
+          maskCloseable,
           direction
         });
       }
     },
 
-    onClickOverlay() {
+    onClickMask() {
       this.toggle();
       this.$emit('close');
     },

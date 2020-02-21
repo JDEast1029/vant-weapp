@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-overlay": "path/to/@vant/weapp/dist/overlay/index"
+  "mc-overlay": "path/to/@vant/weapp/dist/overlay/index"
 }
 ```
 
@@ -19,8 +19,8 @@
 ### 基础用法
 
 ```html
-<van-button type="primary" bind:click="onClickShow">显示遮罩层</van-button>
-<van-overlay show="{{ show }}" bind:click="onClickHide"/>
+<mc-button type="primary" bind:click="onClickShow">显示遮罩层</mc-button>
+<mc-overlay show="{{ show }}" bind:click="onClickHide"/>
 ```
 
 ```js
@@ -44,12 +44,12 @@ Page({
 通过默认插槽可以在遮罩层上嵌入任意内容
 
 ```html
-<van-button type="primary" bind:click="onClickShow">嵌入内容</van-button>
-<van-overlay show="{{ show }}" bind:click="onClickHide">
+<mc-button type="primary" bind:click="onClickShow">嵌入内容</mc-button>
+<mc-overlay show="{{ show }}" bind:click="onClickHide">
   <view class="wrapper">
     <view class="block" catch:tap="noop" />
   </view>
-</van-overlay>
+</mc-overlay>
 ```
 
 ```js

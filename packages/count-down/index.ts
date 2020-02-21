@@ -1,11 +1,11 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { isSameSecond, parseFormat, parseTimeData } from './utils';
 
 function simpleTick(fn: Function) {
   return setTimeout(fn, 30);
 }
 
-VantComponent({
+McComponent({
   props: {
     useSlot: Boolean,
     millisecond: Boolean,

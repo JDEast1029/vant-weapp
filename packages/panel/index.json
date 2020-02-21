@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "van-cell": "../cell/index"
+    "mc-cell": "../cell/index"
   }
 }

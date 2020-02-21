@@ -1,10 +1,10 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 
 const FONT_COLOR = '#ed6a0c';
 const BG_COLOR = '#fffbe8';
 
-VantComponent({
+McComponent({
   props: {
     text: {
       type: String,
@@ -77,8 +77,8 @@ VantComponent({
   methods: {
     init() {
       Promise.all([
-        this.getRect('.van-notice-bar__content'),
-        this.getRect('.van-notice-bar__wrap')
+        this.getRect('.mc-notice-bar__content'),
+        this.getRect('.mc-notice-bar__wrap')
       ]).then((rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
         const [contentRect, wrapRect] = rects;
         if (

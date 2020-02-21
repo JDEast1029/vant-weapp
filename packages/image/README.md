@@ -10,11 +10,11 @@
 
 ```json
 "usingComponents": {
-  "van-image": "path/to/@vant/weapp/dist/image/index"
+  "mc-image": "path/to/@vant/weapp/dist/image/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
@@ -23,7 +23,7 @@
 基础用法与原生 [image]((https://developers.weixin.qq.com/miniprogram/dev/component/image.html)) 标签一致，可以设置`src`、`width`、`height`等原生属性
 
 ```html
-<van-image
+<mc-image
   width="100"
   height="100"
   src="https://img.yzcdn.cn/vant/cat.jpeg"
@@ -35,7 +35,7 @@
 通过`fit`属性可以设置图片填充模式，可选值见下方表格
 
 ```html
-<van-image
+<mc-image
   width="10rem"
   height="10rem"
   fit="contain"
@@ -48,7 +48,7 @@
 通过`round`属性可以设置图片变圆，注意当图片宽高不相等且`fit`为`contain`或`scale-down`时，将无法填充一个完整的圆形。
 
 ```html
-<van-image
+<mc-image
   round
   width="10rem"
   height="10rem"
@@ -61,7 +61,7 @@
 图片懒加载，在即将进入一定范围（上下三屏）时才开始加载
 
 ```html
-<van-image
+<mc-image
   width="100"
   height="100"
   lazy-load
@@ -74,14 +74,14 @@
 `Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容
 
 ```html
-<van-image use-loading-slot>
-  <van-loading
+<mc-image use-loading-slot>
+  <mc-loading
     slot="loading"
     type="spinner"
     size="20"
     vertical
   />
-</van-image>
+</mc-image>
 ```
 
 ### 加载失败提示
@@ -89,9 +89,9 @@
 `Image`组件提供了默认的加载失败提示，支持通过`error`插槽自定义内容
 
 ```html
-<van-image use-error-slot>
+<mc-image use-error-slot>
   <text slot="error">加载失败</text>
-</van-image>
+</mc-image>
 ```
 
 ## API

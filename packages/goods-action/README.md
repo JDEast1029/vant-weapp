@@ -6,40 +6,40 @@
 
 ```json
 "usingComponents": {
-  "van-goods-action": "path/to/@vant/weapp/dist/goods-action/index",
-  "van-goods-action-icon": "path/to/@vant/weapp/dist/goods-action-icon/index",
-  "van-goods-action-button": "path/to/@vant/weapp/dist/goods-action-button/index"
+  "mc-goods-action": "path/to/@vant/weapp/dist/goods-action/index",
+  "mc-goods-action-icon": "path/to/@vant/weapp/dist/goods-action-icon/index",
+  "mc-goods-action-button": "path/to/@vant/weapp/dist/goods-action-button/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
 ### 基础用法
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon
+<mc-goods-action>
+  <mc-goods-action-icon
     icon="chat-o"
     text="客服"
     bind:click="onClickIcon"
   />
-  <van-goods-action-icon
+  <mc-goods-action-icon
     icon="cart-o"
     text="购物车"
     bind:click="onClickIcon"
   />
-  <van-goods-action-button
+  <mc-goods-action-button
     text="加入购物车"
     type="warning"
     bind:click="onClickButton"
   />
-  <van-goods-action-button
+  <mc-goods-action-button
     text="立即购买"
     bind:click="onClickButton"
   />
-</van-goods-action>
+</mc-goods-action>
 ```
 
 ```javascript
@@ -59,13 +59,13 @@ Page({
 设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" dot />
-  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" />
-  <van-goods-action-button text="加入购物车" type="warning" />
-  <van-goods-action-button text="立即购买" />
-</van-goods-action>
+<mc-goods-action>
+  <mc-goods-action-icon icon="chat-o" text="客服" dot />
+  <mc-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <mc-goods-action-icon icon="shop-o" text="店铺" />
+  <mc-goods-action-button text="加入购物车" type="warning" />
+  <mc-goods-action-button text="立即购买" />
+</mc-goods-action>
 ```
 
 ### 自定义按钮颜色
@@ -73,26 +73,26 @@ Page({
 通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" />
-  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" />
-  <van-goods-action-button color="#be99ff" text="加入购物车" type="warning" />
-  <van-goods-action-button color="#7232dd" text="立即购买" />
-</van-goods-action>
+<mc-goods-action>
+  <mc-goods-action-icon icon="chat-o" text="客服" />
+  <mc-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <mc-goods-action-icon icon="shop-o" text="店铺" />
+  <mc-goods-action-button color="#be99ff" text="加入购物车" type="warning" />
+  <mc-goods-action-button color="#7232dd" text="立即购买" />
+</mc-goods-action>
 ```
 ### 朴素按钮
 
 通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" />
-  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" />
-  <van-goods-action-button color="#7232dd"  text="加入购物" type="warning" />
-  <van-goods-action-button plain color="#7232dd" text="立即购买" />
-</van-goods-action>
+<mc-goods-action>
+  <mc-goods-action-icon icon="chat-o" text="客服" />
+  <mc-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <mc-goods-action-icon icon="shop-o" text="店铺" />
+  <mc-goods-action-button color="#7232dd"  text="加入购物" type="warning" />
+  <mc-goods-action-button plain color="#7232dd" text="立即购买" />
+</mc-goods-action>
 ```
 
 ## API

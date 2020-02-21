@@ -6,11 +6,11 @@
   bind:tap="onClick"
 >
   <view
-    class="van-slider__bar"
+    class="mc-slider__bar"
     style="{{ barStyle }}; {{ activeColor ? 'background:' + activeColor : '' }}"
   >
     <view
-      class="van-slider__button-wrapper"
+      class="mc-slider__button-wrapper"
       bind:touchstart="onTouchStart"
       catch:touchmove="onTouchMove"
       bind:touchend="onTouchEnd"
@@ -22,7 +22,7 @@
       />
       <view
         wx:else
-        class="van-slider__button"
+        class="mc-slider__button"
       />
     </view>
   </view>

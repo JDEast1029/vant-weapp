@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-dropdown-menu": "path/to/@vant/weapp/dist/dropdown-menu/index",
-  "van-dropdown-item": "path/to/@vant/weapp/dist/dropdown-item/index"
+  "mc-dropdown-menu": "path/to/@vant/weapp/dist/dropdown-menu/index",
+  "mc-dropdown-item": "path/to/@vant/weapp/dist/dropdown-item/index"
 }
 ```
 
@@ -16,10 +16,10 @@
 ### 基础用法
 
 ```html
-<van-dropdown-menu>
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
-</van-dropdown-menu>
+<mc-dropdown-menu>
+  <mc-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <mc-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</mc-dropdown-menu>
 ```
 
 ```js
@@ -44,32 +44,32 @@ Page({
 ### 自定义菜单内容
 
 ```html
-<van-dropdown-menu>
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  <van-dropdown-item id="item" title="{{ itemTitle }}">
-    <van-cell title="{{ switchTitle1 }}">
-      <van-switch
+<mc-dropdown-menu>
+  <mc-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <mc-dropdown-item id="item" title="{{ itemTitle }}">
+    <mc-cell title="{{ switchTitle1 }}">
+      <mc-switch
         slot="right-icon"
         size="24px"
         style="height: 26px"
         checked="{{ switch1 }}"
         bind:change="onSwitch1Change"
       />
-    </van-cell>
-    <van-cell title="{{ switchTitle2 }}">
-      <van-switch
+    </mc-cell>
+    <mc-cell title="{{ switchTitle2 }}">
+      <mc-switch
         slot="right-icon"
         size="24px"
         style="height: 26px"
         checked="{{ switch2 }}"
         bind:change="onSwitch2Change"
       />
-    </van-cell>
-    <van-button type="info" block bind:click="onConfirm">
+    </mc-cell>
+    <mc-button type="info" block bind:click="onConfirm">
       确定
-    </van-button>
-  </van-dropdown-item>
-</van-dropdown-menu>
+    </mc-button>
+  </mc-dropdown-item>
+</mc-dropdown-menu>
 ```
 
 ```js
@@ -103,28 +103,28 @@ Page({
 ### 自定义选中状态颜色
 
 ```html
-<van-dropdown-menu active-color="#ee0a24">
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
-</van-dropdown-menu>
+<mc-dropdown-menu active-color="#ee0a24">
+  <mc-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <mc-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</mc-dropdown-menu>
 ```
 
 ### 向上展开
 
 ```html
-<van-dropdown-menu direction="up">
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
-</van-dropdown-menu>
+<mc-dropdown-menu direction="up">
+  <mc-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <mc-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</mc-dropdown-menu>
 ```
 
 ### 禁用菜单
 
 ```html
-<van-dropdown-menu>
-  <van-dropdown-item value="{{ value1 }}" disabled options="{{ option1 }}" />
-  <van-dropdown-item value="{{ value2 }}" disabled options="{{ option2 }}" />
-</van-dropdown-menu>
+<mc-dropdown-menu>
+  <mc-dropdown-item value="{{ value1 }}" disabled options="{{ option1 }}" />
+  <mc-dropdown-item value="{{ value2 }}" disabled options="{{ option2 }}" />
+</mc-dropdown-menu>
 ```
 
 ## API
@@ -137,8 +137,8 @@ Page({
 | z-index                | 菜单栏 z-index 层级            | *number*  | `10`      | -       |
 | duration               | 动画时长，单位毫秒             | *number*  | `200`     | -       |
 | direction              | 菜单展开方向，可选值为up       | *string*  | `down`    | -       |
-| overlay                | 是否显示遮罩层                 | *boolean* | `true`    | -       |
-| close-on-click-overlay | 是否在点击遮罩层后关闭菜单     | *boolean* | `true`    | -       |
+| mask                | 是否显示遮罩层                 | *boolean* | `true`    | -       |
+| mask-closeable | 是否在点击遮罩层后关闭菜单     | *boolean* | `true`    | -       |
 | close-on-click-outside | 是否在点击外部 menu 后关闭菜单 | *boolean* | `true`    | -       |
 
 ### DropdownItem Props

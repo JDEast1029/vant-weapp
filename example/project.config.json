@@ -222,8 +222,8 @@
 				},
 				{
 					"id": -1,
-					"name": "dialog",
-					"pathName": "pages/dialog/index",
+					"name": "modal",
+					"pathName": "pages/modal/index",
 					"query": ""
 				},
 				{
@@ -334,6 +334,13 @@
 					"id": -1,
 					"name": "uploader",
 					"pathName": "pages/uploader/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dropdown-menu/index",
+					"pathName": "pages/dropdown-menu/index",
 					"scene": null
 				}
 			]

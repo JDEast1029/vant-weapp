@@ -1,8 +1,8 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
-const ROOT_ELEMENT = '.van-sticky';
+const ROOT_ELEMENT = '.mc-sticky';
 
-VantComponent({
+McComponent({
   props: {
     zIndex: {
       type: Number,

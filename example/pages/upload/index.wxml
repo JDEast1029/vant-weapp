@@ -1,5 +1,5 @@
 <demo-block title="基础用法" padding>
-  <van-uploader
+  <van-upload
     name="1"
     file-list="{{ fileList1 }}"
     bind:after-read="afterRead"
@@ -9,7 +9,7 @@
 </demo-block>
 
 <demo-block title="上传视频" padding>
-  <van-uploader
+  <van-upload
     name="7"
     accept="video"
     file-list="{{ fileList7 }}"
@@ -19,7 +19,7 @@
 </demo-block>
 
 <demo-block title="文件预览" padding>
-  <van-uploader
+  <van-upload
     name="2"
     file-list="{{ fileList2 }}"
     multiple
@@ -30,7 +30,7 @@
 </demo-block>
 
 <demo-block title="限制上传数量" padding>
-  <van-uploader
+  <van-upload
     name="3"
     file-list="{{ fileList3 }}"
     multiple
@@ -42,7 +42,7 @@
 </demo-block>
 
 <demo-block title="自定义上传样式" padding>
-  <van-uploader
+  <van-upload
     name="4"
     file-list="{{ fileList4 }}"
     max-count="{{ 2 }}"
@@ -52,11 +52,11 @@
     use-slot="{{ true }}"
   >
     <van-button icon="photo" type="primary">上传图片</van-button>
-  </van-uploader>
+  </van-upload>
 </demo-block>
 
 <demo-block title="上传前校验" padding>
-  <van-uploader
+  <van-upload
     name="5"
     file-list="{{ fileList5 }}"
     bind:before-read="beforeRead"
@@ -68,7 +68,7 @@
 </demo-block>
 
 <demo-block title="云存储上传" padding>
-  <van-uploader
+  <van-upload
     name="6"
     file-list="{{ fileList6 }}"
     bind:before-read="beforeRead"

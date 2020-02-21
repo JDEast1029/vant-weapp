@@ -10,12 +10,12 @@
 
 ```json
 "usingComponents": {
-  "van-grid": "path/to/@vant/weapp/dist/grid/index",
-  "van-grid-item": "path/to/@vant/weapp/dist/grid-item/index"
+  "mc-grid": "path/to/@vant/weapp/dist/grid/index",
+  "mc-grid-item": "path/to/@vant/weapp/dist/grid-item/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
@@ -24,12 +24,12 @@
 通过`icon`属性设置格子内的图标，`text`属性设置文字内容
 
 ```html
-<van-grid>
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-</van-grid>
+<mc-grid>
+  <mc-grid-item icon="photo-o" text="文字" />
+  <mc-grid-item icon="photo-o" text="文字" />
+  <mc-grid-item icon="photo-o" text="文字" />
+  <mc-grid-item icon="photo-o" text="文字" />
+</mc-grid>
 ```
 
 ### 自定义列数
@@ -37,9 +37,9 @@
 默认一行展示四个格子，可以通过`column-num`自定义列数
 
 ```html
-<van-grid column-num="3">
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 6 }}" />
-</van-grid>
+<mc-grid column-num="3">
+  <mc-grid-item icon="photo-o" text="文字" wx:for="{{ 6 }}" />
+</mc-grid>
 ```
 
 ### 自定义内容
@@ -47,14 +47,14 @@
 通过插槽可以自定义格子展示的内容
 
 ```html
-<van-grid column-num="3" border="{{ false }}">
-  <van-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
+<mc-grid column-num="3" border="{{ false }}">
+  <mc-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
     <image
       style="width: 100%; height: 90px;"
       src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg"
     />
-  </van-grid-item>
-</van-grid>
+  </mc-grid-item>
+</mc-grid>
 ```
 
 ### 正方形格子
@@ -62,9 +62,9 @@
 设置`square`属性后，格子的高度会和宽度保持一致
 
 ```html
-<van-grid square>
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
-</van-grid>
+<mc-grid square>
+  <mc-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
+</mc-grid>
 ```
 
 ### 格子间距
@@ -72,9 +72,9 @@
 通过`gutter`属性设置格子之间的距离
 
 ```html
-<van-grid gutter="{{ 10 }}">
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
-</van-grid>
+<mc-grid gutter="{{ 10 }}">
+  <mc-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
+</mc-grid>
 ```
 
 ### 页面跳转
@@ -82,20 +82,20 @@
 可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型
 
 ```html
-<van-grid clickable column-num="2">
-  <van-grid-item
+<mc-grid clickable column-num="2">
+  <mc-grid-item
     icon="home-o"
     link-type="navigateTo"
     url="/pages/dashboard/index"
     text="Navigate 跳转"
   />
-  <van-grid-item
+  <mc-grid-item
     icon="search"
     link-type="reLaunch"
     url="/pages/dashboard/index"
     text="ReLaunch 跳转"
   />
-</van-grid>
+</mc-grid>
 ```
 
 ### 提示信息
@@ -103,10 +103,10 @@
 设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
-<van-grid column-num="2">
-  <van-grid-item icon="home-o" text="文字" dot />
-  <van-grid-item icon="search" text="文字" info="99+" />
-</van-grid>
+<mc-grid column-num="2">
+  <mc-grid-item icon="home-o" text="文字" dot />
+  <mc-grid-item icon="search" text="文字" info="99+" />
+</mc-grid>
 ```
 
 ## API

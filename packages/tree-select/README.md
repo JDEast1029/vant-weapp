@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-tree-select": "path/to/@vant/weapp/dist/tree-select/index"
+  "mc-tree-select": "path/to/@vant/weapp/dist/tree-select/index"
 }
 ```
 
@@ -14,11 +14,11 @@
 
 ### 单选模式
 
-可以在任意位置上使用 van-tree-select 标签。传入对应的数据即可。
+可以在任意位置上使用 mc-tree-select 标签。传入对应的数据即可。
 此组件支持单选或多选，具体行为完全基于事件 click-item 的实现逻辑如何为属性 active-id 赋值，当 active-id 为数组时即为多选状态。
 
 ```html
-<van-tree-select
+<mc-tree-select
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
@@ -51,7 +51,7 @@ Page({
 ### 多选模式
 
 ```html
-<van-tree-select
+<mc-tree-select
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
@@ -93,7 +93,7 @@ Page({
 ### 自定义内容
 
 ```html
-<van-tree-select
+<mc-tree-select
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
@@ -101,7 +101,7 @@ Page({
   bind:click-item="onClickItem"
 >
   <image src="https://img.yzcdn.cn/vant/apple-1.jpg" slot="content" />
-</van-tree-select>
+</mc-tree-select>
 ```
 
 ## API

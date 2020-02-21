@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { GREEN } from '../common/color';
 
 const indexList = () => {
@@ -12,7 +12,7 @@ const indexList = () => {
   return indexList;
 };
 
-VantComponent({
+McComponent({
   relation: {
     name: 'index-anchor',
     type: 'descendant',
@@ -90,7 +90,7 @@ VantComponent({
       return Promise.all(
         this.children.map(anchor =>
           anchor
-            .getRect('.van-index-anchor-wrapper')
+            .getRect('.mc-index-anchor-wrapper')
             .then(
               (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
                 Object.assign(anchor, {
@@ -104,7 +104,7 @@ VantComponent({
     },
 
     setListRect() {
-      return this.getRect('.van-index-bar').then(
+      return this.getRect('.mc-index-bar').then(
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           Object.assign(this, {
             height: rect.height,
@@ -115,7 +115,7 @@ VantComponent({
     },
 
     setSiderbarRect() {
-      return this.getRect('.van-index-bar__sidebar').then(res => {
+      return this.getRect('.mc-index-bar__sidebar').then(res => {
         this.sidebar = {
           height: res.height,
           top: res.top
@@ -139,7 +139,7 @@ VantComponent({
 
     getAnchorRect(anchor) {
       return anchor
-        .getRect('.van-index-anchor-wrapper')
+        .getRect('.mc-index-anchor-wrapper')
         .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => ({
           height: rect.height,
           top: rect.top

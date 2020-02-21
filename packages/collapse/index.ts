@@ -1,8 +1,8 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
-VantComponent({
+McComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',

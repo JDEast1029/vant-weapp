@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-panel": "path/to/@vant/weapp/dist/panel/index"
+  "mc-panel": "path/to/@vant/weapp/dist/panel/index"
 }
 ```
 
@@ -16,22 +16,22 @@
 面板只是一个容器，里面可以放入自定义的内容
 
 ```html
-<van-panel title="标题" desc="描述信息" status="状态">
+<mc-panel title="标题" desc="描述信息" status="状态">
   <view>内容</view>
-</van-panel>
+</mc-panel>
 ```
 
 ### 高级用法
 使用`slot`自定义内容
 
 ```html
-<van-panel title="标题" desc="描述信息" status="状态" use-footer-slot>
+<mc-panel title="标题" desc="描述信息" status="状态" use-footer-slot>
   <view>内容</view>
   <view slot="footer">
-    <van-button size="small">按钮</van-button>
-    <van-button size="small" type="danger">按钮</van-button>
+    <mc-button size="small">按钮</mc-button>
+    <mc-button size="small" type="danger">按钮</mc-button>
   </view>
-</van-panel>
+</mc-panel>
 ```
 
 ## API

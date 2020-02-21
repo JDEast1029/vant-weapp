@@ -1,8 +1,8 @@
 import { link } from '../mixins/link';
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { addUnit } from '../common/utils';
 
-VantComponent({
+McComponent({
   relation: {
     name: 'grid',
     type: 'ancestor',

@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-tabbar": "path/to/@vant/weapp/dist/tabbar/index",
-  "van-tabbar-item": "path/to/@vant/weapp/dist/tabbar-item/index"
+  "mc-tabbar": "path/to/@vant/weapp/dist/tabbar/index",
+  "mc-tabbar-item": "path/to/@vant/weapp/dist/tabbar-item/index"
 }
 ```
 
@@ -16,12 +16,12 @@
 ### 基础用法
 
 ```html
-<van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-</van-tabbar>
+<mc-tabbar active="{{ active }}" bind:change="onChange">
+  <mc-tabbar-item icon="home-o">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="search">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="friends-o">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="setting-o">标签</mc-tabbar-item>
+</mc-tabbar>
 ```
 
 ```javascript
@@ -41,12 +41,12 @@ Page({
 在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
 
 ```html
-<van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
-  <van-tabbar-item name="friends" icon="friends-o">标签</van-tabbar-item>
-  <van-tabbar-item name="setting" icon="setting-o">标签</van-tabbar-item>
-</van-tabbar>
+<mc-tabbar active="{{ active }}" bind:change="onChange">
+  <mc-tabbar-item name="home" icon="home-o">标签</mc-tabbar-item>
+  <mc-tabbar-item name="search" icon="search">标签</mc-tabbar-item>
+  <mc-tabbar-item name="friends" icon="friends-o">标签</mc-tabbar-item>
+  <mc-tabbar-item name="setting" icon="setting-o">标签</mc-tabbar-item>
+</mc-tabbar>
 ```
 
 ```javascript
@@ -63,12 +63,12 @@ Page({
 ### 显示徽标
 
 ```html
-<van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
-</van-tabbar>
+<mc-tabbar active="{{ active }}" bind:change="onChange">
+  <mc-tabbar-item icon="home-o">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="search" dot>标签</mc-tabbar-item>
+  <mc-tabbar-item icon="friends-o" info="5">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="setting-o" info="20">标签</mc-tabbar-item>
+</mc-tabbar>
 ```
 
 ### 自定义图标
@@ -76,8 +76,8 @@ Page({
 可以通过 slot 自定义图标，其中 icon slot 代表未选中状态下的图标，icon-active slot 代表选中状态下的图标
 
 ```html
-<van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item info="3">
+<mc-tabbar active="{{ active }}" bind:change="onChange">
+  <mc-tabbar-item info="3">
     <image
       slot="icon"
       src="{{ icon.normal }}"
@@ -91,10 +91,10 @@ Page({
       style="width: 30px; height: 18px;"
     />
     自定义
-  </van-tabbar-item>
-  <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-</van-tabbar>
+  </mc-tabbar-item>
+  <mc-tabbar-item icon="search">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="setting-o">标签</mc-tabbar-item>
+</mc-tabbar>
 ```
 
 ```javascript
@@ -115,17 +115,17 @@ Page({
 ### 自定义颜色
 
 ```html
-<van-tabbar
+<mc-tabbar
   active="{{ active }}"
   active-color="#07c160"
   inactive-color="#000"
   bind:change="onChange"
 >
-  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-</van-tabbar>
+  <mc-tabbar-item icon="home-o">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="search">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="friends-o">标签</mc-tabbar-item>
+  <mc-tabbar-item icon="setting-o">标签</mc-tabbar-item>
+</mc-tabbar>
 ```
 
 ```javascript
@@ -143,15 +143,15 @@ Page({
 ### 切换标签事件
 
 ```html
-<van-tabbar
+<mc-tabbar
   active="{{ active }}"
   bind:change="onChange"
 >
-  <van-tabbar-item icon="home-o">标签1</van-tabbar-item>
-  <van-tabbar-item icon="search">标签2</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
-</van-tabbar>
+  <mc-tabbar-item icon="home-o">标签1</mc-tabbar-item>
+  <mc-tabbar-item icon="search">标签2</mc-tabbar-item>
+  <mc-tabbar-item icon="friends-o">标签3</mc-tabbar-item>
+  <mc-tabbar-item icon="setting-o">标签4</mc-tabbar-item>
+</mc-tabbar>
 ```
 
 ```javascript

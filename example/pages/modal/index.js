@@ -1,5 +1,5 @@
 import Page from '../../common/page';
-import Dialog from '../../dist/dialog/dialog';
+import Modal from '../../dist/modal/modal';
 
 const message = '代码是写出来给人看的，附带能在机器上运行';
 
@@ -8,12 +8,12 @@ Page({
     show: false
   },
 
-  showCustomDialog() {
+  showCustomModal() {
     this.setData({ show: true });
   },
 
   onClickAlert() {
-    Dialog.alert({
+    Modal.alert({
       title: '标题',
       message
     });
@@ -24,31 +24,31 @@ Page({
   },
 
   onClickAlert2() {
-    Dialog.alert({
+    Modal.alert({
       message
     });
   },
 
   onClickConfirm() {
-    Dialog.confirm({
+    Modal.confirm({
       title: '标题',
       message
     });
   },
 
   onClickAsyncClose() {
-    Dialog.confirm({
+    Modal.confirm({
       title: '标题',
       message,
       asyncClose: true
     })
       .then(() => {
         setTimeout(() => {
-          Dialog.close();
+          Modal.close();
         }, 1000);
       })
       .catch(() => {
-        Dialog.close();
+        Modal.close();
       });
   },
 

@@ -1,5 +1,5 @@
 import { addUnit, isDef } from '../common/utils';
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 
@@ -10,7 +10,7 @@ const FIT_MODE_MAP = {
   contain: 'aspectFit'
 };
 
-VantComponent({
+McComponent({
   mixins: [button, openType],
 
   classes: ['custom-class', 'loading-class', 'error-class', 'image-class'],

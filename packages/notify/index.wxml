@@ -1,12 +1,12 @@
-<van-transition
+<mc-transition
   name="slide-down"
   show="{{ show }}"
-  custom-class="van-notify__container"
+  custom-class="mc-notify__container"
   custom-style="z-index: {{ zIndex }};"
   bind:tap="onTap"
 >
   <view
-    class="van-notify van-notify--{{ type }}"
+    class="mc-notify mc-notify--{{ type }}"
     style="background:{{ background }};color:{{ color }};"
   >
     <view
@@ -15,4 +15,4 @@
     ></view>
     <text>{{ message }}</text>
   </view>
-</van-transition>
+</mc-transition>

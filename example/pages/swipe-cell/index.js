@@ -1,5 +1,5 @@
 import Page from '../../common/page';
-import Dialog from '../../dist/dialog/dialog';
+import Modal from '../../dist/modal/modal';
 import Notify from '../../dist/notify/notify';
 
 Page({
@@ -11,7 +11,7 @@ Page({
         instance.close();
         break;
       case 'right':
-        Dialog.confirm({
+        Modal.confirm({
           message: '确定删除吗？'
         }).then(() => {
           instance.close();

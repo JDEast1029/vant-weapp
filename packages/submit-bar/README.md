@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-submit-bar": "path/to/@vant/weapp/dist/submit-bar/index"
+  "mc-submit-bar": "path/to/@vant/weapp/dist/submit-bar/index"
 }
 ```
 
@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```html
-<van-submit-bar
+<mc-submit-bar
   price="{{ 3050 }}"
   button-text="提交订单"
   bind:submit="onSubmit"
@@ -27,7 +27,7 @@
 禁用状态下不会触发`submit`事件
 
 ```html
-<van-submit-bar
+<mc-submit-bar
   disabled
   price="{{ 3050 }}"
   button-text="提交订单"
@@ -42,7 +42,7 @@
 加载状态下不会触发`submit`事件
 
 ```html
-<van-submit-bar
+<mc-submit-bar
   loading
   price="{{ 3050 }}"
   button-text="提交订单"
@@ -55,17 +55,17 @@
 通过插槽插入自定义内容
 
 ```html
-<van-submit-bar
+<mc-submit-bar
   price="{{ 3050 }}"
   button-text="提交订单"
   bind:submit="onClickButton"
   tip="{{ true }}"
 >
-  <van-tag type="primary">标签</van-tag>
+  <mc-tag type="primary">标签</mc-tag>
   <view slot="tip">
     您的收货地址不支持同城送, <text>修改地址</text>
   </view>
-</van-submit-bar>
+</mc-submit-bar>
 ```
 
 ## API

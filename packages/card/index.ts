@@ -1,7 +1,7 @@
 import { link } from '../mixins/link';
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
-VantComponent({
+McComponent({
   classes: [
     'num-class',
     'desc-class',

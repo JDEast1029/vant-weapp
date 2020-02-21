@@ -1,7 +1,7 @@
 <wxs src="./index.wxs" module="getOptionText" />
 
 <view
-  class="van-picker-column custom-class"
+  class="mc-picker-column custom-class"
   style="height: {{ itemHeight * visibleItemCount }}px"
   bind:touchstart="onTouchStart"
   catch:touchmove="onTouchMove"
@@ -15,7 +15,7 @@
       wx:key="index"
       data-index="{{ index }}"
       style="height: {{ itemHeight }}px"
-      class="van-ellipsis van-picker-column__item {{ option && option.disabled ? 'van-picker-column__item--disabled' : '' }} {{ index === currentIndex ? 'van-picker-column__item--selected active-class' : '' }}"
+      class="mc-ellipsis mc-picker-column__item {{ option && option.disabled ? 'mc-picker-column__item--disabled' : '' }} {{ index === currentIndex ? 'mc-picker-column__item--selected active-class' : '' }}"
       bindtap="onClickItem"
     >{{ getOptionText(option, valueKey) }}</view>
   </view>

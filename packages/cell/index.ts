@@ -1,8 +1,8 @@
 import { link } from '../mixins/link';
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 
-VantComponent({
+McComponent({
   classes: [
     'title-class',
     'label-class',

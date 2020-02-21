@@ -1,11 +1,11 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { addUnit } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 let ARRAY: TrivialInstance[] = [];
 
-VantComponent({
+McComponent({
   field: true,
 
   relation: {
@@ -25,7 +25,7 @@ VantComponent({
       type: String,
       observer: 'updateChildrenData'
     },
-    overlay: {
+    mask: {
       type: Boolean,
       value: true,
       observer: 'updateChildrenData'
@@ -44,7 +44,7 @@ VantComponent({
       value: 'down',
       observer: 'updateChildrenData'
     },
-    closeOnClickOverlay: {
+    maskCloseable: {
       type: Boolean,
       value: true,
       observer: 'updateChildrenData'
@@ -102,7 +102,7 @@ VantComponent({
     getChildWrapperStyle() {
       const { zIndex, direction } = this.data;
 
-      return this.getRect('.van-dropdown-menu').then(
+      return this.getRect('.mc-dropdown-menu').then(
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           const { top = 0, bottom = 0 } = rect;
           const offset = direction === 'down' ? bottom : this.windowHeight - top;

@@ -5,7 +5,7 @@
 
 ```json
 "usingComponents": {
-  "van-notify": "path/to/@vant/weapp/dist/notify/index"
+  "mc-notify": "path/to/@vant/weapp/dist/notify/index"
 }
 ```
 
@@ -21,7 +21,7 @@ Notify('通知内容');
 
 ```html
 <!-- 在页面内添加对应的节点 -->
-<van-notify id="van-notify" />
+<mc-notify id="mc-notify" />
 ```
 
 ### 通知类型
@@ -71,7 +71,7 @@ Notify({
 
 ```html
 <!-- 在页面内添加自定义节点 -->
-<van-notify id="custom-selector" />
+<mc-notify id="custom-selector" />
 ```
 
 ## API
@@ -90,7 +90,7 @@ Notify({
 | type | 类型，可选值为 `primary` `success` `warning` | *string* | `danger` | 1.0.0 |
 | message | 展示文案，支持通过`\n`换行 | *string* | 1.0.0 | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | *number* | `3000` | - |
-| selector | 自定义节点选择器 | *string* | `van-notify` | - |
+| selector | 自定义节点选择器 | *string* | `mc-notify` | - |
 | color | 字体颜色 | *string* | `#fff` | - |
 | background | 背景颜色 | *string* | - | - |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | *object* | 当前页面 | - |

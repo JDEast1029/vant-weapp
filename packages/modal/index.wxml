@@ -1,19 +1,19 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<van-popup
+<mc-popup
   show="{{ show }}"
   z-index="{{ zIndex }}"
-  overlay="{{ overlay }}"
+  mask="{{ mask }}"
   transition="{{ transition }}"
-  custom-class="van-dialog {{ className }}"
+  custom-class="mc-modal {{ className }}"
   custom-style="width: {{ utils.addUnit(width) }};{{ customStyle }}"
-  overlay-style="{{ overlayStyle }}"
-  close-on-click-overlay="{{ closeOnClickOverlay }}"
-  bind:close="onClickOverlay"
+  mask-style="{{ maskStyle }}"
+  mask-closkable="{{ maskCloseable }}"
+  bind:close="onClickMask"
 >
   <view
     wx:if="{{ title || useTitleSlot  }}"
-    class="van-dialog__header {{ message || useSlot ? '' : 'van-dialog--isolated' }}"
+    class="mc-modal__header {{ message || useSlot ? '' : 'mc-modal--isolated' }}"
   >
     <slot wx:if="{{ useTitleSlot }}" name="title" />
     <block wx:elif="{{ title }}"> {{ title }}</block>
@@ -22,29 +22,29 @@
   <slot wx:if="{{ useSlot }}" />
   <view
     wx:elif="{{ message }}"
-    class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }} {{ messageAlign ? 'van-dialog__message--' + messageAlign : '' }}"
+    class="mc-modal__message {{ title ? 'mc-modal__message--has-title' : '' }} {{ messageAlign ? 'mc-modal__message--' + messageAlign : '' }}"
   >
-    <text class="van-dialog__message-text">{{ message }}</text>
+    <text class="mc-modal__message-text">{{ message }}</text>
   </view>
 
-  <view class="van-hairline--top van-dialog__footer">
-    <van-button
+  <view class="mc-hairline--top mc-modal__footer">
+    <mc-button
       wx:if="{{ showCancelButton }}"
       size="large"
       loading="{{ loading.cancel }}"
-      class="van-dialog__button van-hairline--right"
-      custom-class="van-dialog__cancel"
+      class="mc-modal__button mc-hairline--right"
+      custom-class="mc-modal__cancel"
       custom-style="color: {{ cancelButtonColor }}"
       bind:click="onCancel"
     >
       {{ cancelButtonText }}
-    </van-button>
-    <van-button
+    </mc-button>
+    <mc-button
       wx:if="{{ showConfirmButton }}"
       size="large"
-      class="van-dialog__button"
+      class="mc-modal__button"
       loading="{{ loading.confirm }}"
-      custom-class="van-dialog__confirm"
+      custom-class="mc-modal__confirm"
       custom-style="color: {{ confirmButtonColor }}"
 
       open-type="{{ confirmButtonOpenType }}"
@@ -66,6 +66,6 @@
       bindopensetting="bindOpenSetting"
     >
       {{ confirmButtonText }}
-    </van-button>
+    </mc-button>
   </view>
-</van-popup>
+</mc-popup>

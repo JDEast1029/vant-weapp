@@ -1,10 +1,10 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="./index.wxs" module="computed" />
 
-<view class="van-checkbox custom-class">
-  <view class="van-checkbox__icon-wrap" bindtap="toggle">
+<view class="mc-checkbox custom-class">
+  <view class="mc-checkbox__icon-wrap" bindtap="toggle">
     <slot wx:if="{{ useIconSlot }}" name="icon" />
-    <van-icon
+    <mc-icon
       wx:else
       name="success"
       size="0.8em"

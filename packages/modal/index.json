@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mc-popup": "../popup/index",
+    "mc-button": "../button/index"
+  }
+}

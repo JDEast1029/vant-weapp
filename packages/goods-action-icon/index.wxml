@@ -1,4 +1,4 @@
-<van-button
+<mc-button
   square
   id="{{ id }}"
   size="large"
@@ -7,7 +7,7 @@
   disabled="{{ disabled }}"
   open-type="{{ openType }}"
   business-id="{{ businessId }}"
-  custom-class="van-goods-action-icon"
+  custom-class="mc-goods-action-icon"
   session-from="{{ sessionFrom }}"
   app-parameter="{{ appParameter }}"
   send-message-img="{{ sendMessageImg }}"
@@ -22,17 +22,17 @@
   bindgetphonenumber="bindGetPhoneNumber"
   bindlaunchapp="bindLaunchApp"
 >
-  <view class="van-goods-action-icon__content">
-    <van-icon
+  <view class="mc-goods-action-icon__content">
+    <mc-icon
       wx:if="{{ icon }}"
       size="20px"
       name="{{ icon }}"
       dot="{{ dot }}"
       info="{{ info }}"
-      class="van-goods-action-icon__icon"
+      class="mc-goods-action-icon__icon"
       custom-class="icon-class"
     />
     <slot name="icon" />
     <text class="text-class">{{ text }}</text>
   </view>
-</van-button>
+</mc-button>

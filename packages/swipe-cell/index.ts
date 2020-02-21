@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
 import { range } from '../common/utils';
@@ -6,7 +6,7 @@ import { range } from '../common/utils';
 const THRESHOLD = 0.3;
 let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
 
-VantComponent({
+McComponent({
   props: {
     disabled: Boolean,
     leftWidth: {

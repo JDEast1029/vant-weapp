@@ -1,6 +1,6 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
-VantComponent({
+McComponent({
   classes: [
     'active-class',
     'disabled-class',

@@ -6,25 +6,25 @@
 
 ```json
 "usingComponents": {
-  "van-sidebar": "path/to/@vant/weapp/dist/sidebar/index",
-  "van-sidebar-item": "path/to/@vant/weapp/dist/sidebar-item/index"
+  "mc-sidebar": "path/to/@vant/weapp/dist/sidebar/index",
+  "mc-sidebar-item": "path/to/@vant/weapp/dist/sidebar-item/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
 ### 基础用法
 
-通过在`van-sidebar`上设置`activeKey`属性来控制选中项
+通过在`mc-sidebar`上设置`activeKey`属性来控制选中项
 
 ```html
-<van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" />
-</van-sidebar>
+<mc-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+  <mc-sidebar-item title="标签名称" />
+  <mc-sidebar-item title="标签名称" />
+  <mc-sidebar-item title="标签名称" />
+</mc-sidebar>
 ```
 
 ``` javascript
@@ -47,11 +47,11 @@ Page({
 设置`dot`属性后，会在右上角展示一个小红点。设置`info`属性后，会在右上角展示相应的徽标
 
 ```html
-<van-sidebar active-key="{{ activeKey }}">
-  <van-sidebar-item title="标签名称" dot />
-  <van-sidebar-item title="标签名称" info="5" />
-  <van-sidebar-item title="标签名称" info="99+" />
-</van-sidebar>
+<mc-sidebar active-key="{{ activeKey }}">
+  <mc-sidebar-item title="标签名称" dot />
+  <mc-sidebar-item title="标签名称" info="5" />
+  <mc-sidebar-item title="标签名称" info="99+" />
+</mc-sidebar>
 ```
 
 ## API

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-toast": "path/to/@vant/weapp/dist/toast/index"
+  "mc-toast": "path/to/@vant/weapp/dist/toast/index"
 }
 ```
 
@@ -21,7 +21,7 @@ Toast('我是提示文案，建议不超过十五字~');
 ```
 
 ```html
-<van-toast id="van-toast" />
+<mc-toast id="mc-toast" />
 ```
 
 ### 加载提示
@@ -66,7 +66,7 @@ const timer = setInterval(() => {
 ```
 
 ```html
-<van-toast id="custom-selector" />
+<mc-toast id="custom-selector" />
 ```
 
 ### OnClose回调函数
@@ -107,7 +107,7 @@ Toast({
 | loadingType | 加载图标类型, 可选值为 `spinner` | *string* | `circular` | - |
 | zIndex | z-index 层级 | *number* | `1000` | - |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `2000` | - |
-| selector | 自定义选择器 | *string* | `van-toast` | - |
+| selector | 自定义选择器 | *string* | `mc-toast` | - |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | *object* | 当前页面 | - |
 | onClose | 关闭时的回调函数 | *Function* | - | - |
 

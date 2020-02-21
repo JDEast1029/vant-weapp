@@ -5,8 +5,8 @@
 
 ```json
 "usingComponents": {
-  "van-collapse": "path/to/@vant/weapp/dist/collapse/index",
-  "van-collapse-item": "path/to/@vant/weapp/dist/collapse-item/index"
+  "mc-collapse": "path/to/@vant/weapp/dist/collapse/index",
+  "mc-collapse-item": "path/to/@vant/weapp/dist/collapse-item/index"
 }
 ```
 
@@ -17,17 +17,17 @@
 通过`value`控制展开的面板列表，`activeNames`为数组格式
 
 ```html
-<van-collapse value="{{ activeNames }}" bind:change="onChange">
-  <van-collapse-item title="有赞微商城" name="1">
+<mc-collapse value="{{ activeNames }}" bind:change="onChange">
+  <mc-collapse-item title="有赞微商城" name="1">
     提供多样店铺模板，快速搭建网上商城
-  </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
+  </mc-collapse-item>
+  <mc-collapse-item title="有赞零售" name="2">
     网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
-  </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3" disabled>
+  </mc-collapse-item>
+  <mc-collapse-item title="有赞美业" name="3" disabled>
     线上拓客，随时预约，贴心顺手的开单收银
-  </van-collapse-item>
-</van-collapse>
+  </mc-collapse-item>
+</mc-collapse>
 ```
 
 ``` javascript
@@ -48,17 +48,17 @@ Page({
 通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
 
 ```html
-<van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
-  <van-collapse-item title="有赞微商城" name="1">
+<mc-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+  <mc-collapse-item title="有赞微商城" name="1">
     提供多样店铺模板，快速搭建网上商城
-  </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
+  </mc-collapse-item>
+  <mc-collapse-item title="有赞零售" name="2">
     网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
-  </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3">
+  </mc-collapse-item>
+  <mc-collapse-item title="有赞美业" name="3">
     线上拓客，随时预约，贴心顺手的开单收银
-  </van-collapse-item>
-</van-collapse>
+  </mc-collapse-item>
+</mc-collapse>
 ```
 
 ``` javascript
@@ -77,15 +77,15 @@ Page({
 ### 自定义标题内容
 
 ```html
-<van-collapse value="{{ activeNames }}" bind:change="onChange">
-  <van-collapse-item name="1">
-    <view slot="title">有赞微商城<van-icon name="question-o" /></view>
+<mc-collapse value="{{ activeNames }}" bind:change="onChange">
+  <mc-collapse-item name="1">
+    <view slot="title">有赞微商城<mc-icon name="question-o" /></view>
     提供多样店铺模板，快速搭建网上商城
-  </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2" icon="shop-o">
+  </mc-collapse-item>
+  <mc-collapse-item title="有赞零售" name="2" icon="shop-o">
     网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
-  </van-collapse-item>
-</van-collapse>
+  </mc-collapse-item>
+</mc-collapse>
 ```
 
 ``` javascript

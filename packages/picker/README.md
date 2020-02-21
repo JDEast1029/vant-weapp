@@ -9,7 +9,7 @@
 
 ```json
 "usingComponents": {
-  "van-picker": "path/to/@vant/weapp/dist/picker/index"
+  "mc-picker": "path/to/@vant/weapp/dist/picker/index"
 }
 ```
 
@@ -18,7 +18,7 @@
 ### 基础用法
 
 ```html
-<van-picker columns="{{ columns }}" bind:change="onChange" />
+<mc-picker columns="{{ columns }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -41,7 +41,7 @@ Page({
 单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
 
 ```html
-<van-picker
+<mc-picker
   columns="{{ columns }}"
   default-index="{{ 2 }}"
   bind:change="onChange"
@@ -51,7 +51,7 @@ Page({
 ### 展示顶部栏
 
 ```html
-<van-picker
+<mc-picker
   show-toolbar
   title="标题"
   columns="{{ columns }}"
@@ -84,7 +84,7 @@ Page({
 选项可以为对象结构，通过设置 disabled 来禁用该选项
 
 ```html
-<van-picker columns="{{ columns }}" />
+<mc-picker columns="{{ columns }}" />
 ```
 
 ```javascript
@@ -102,7 +102,7 @@ Page({
 ### 多列联动
 
 ```html
-<van-picker columns="{{ columns }}" bind:change="onChange" />
+<mc-picker columns="{{ columns }}" bind:change="onChange" />
 ```
 
 ```javascript
@@ -138,7 +138,7 @@ Page({
 当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示
 
 ```html
-<van-picker columns="{{ columns }}" loading />
+<mc-picker columns="{{ columns }}" loading />
 ```
 
 ## API

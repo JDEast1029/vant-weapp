@@ -1,9 +1,9 @@
 
 import { Weapp } from 'definitions/weapp';
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { WHITE } from '../common/color';
 
-VantComponent({
+McComponent({
   props: {
     message: String,
     background: String,

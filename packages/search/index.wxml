@@ -5,10 +5,10 @@
   style="background: {{ background }}"
 >
   <view class="{{ utils.bem('search__content', [shape]) }}">
-    <view class="van-search__label" wx:if="{{ label }}">{{ label }}</view>
+    <view class="mc-search__label" wx:if="{{ label }}">{{ label }}</view>
     <slot wx:else name="label" />
 
-    <van-field
+    <mc-field
       type="search"
       left-icon="{{ !useLeftIconSlot ? leftIcon : '' }}"
       right-icon="{{ !useRightIconSlot ? rightIcon : '' }}"
@@ -16,7 +16,7 @@
       error="{{ error }}"
       border="{{ false }}"
       confirm-type="search"
-      class="van-search__field field-class"
+      class="mc-search__field field-class"
       value="{{ value }}"
       disabled="{{ disabled }}"
       readonly="{{ readonly }}"
@@ -35,13 +35,13 @@
     >
       <slot wx:if="{{ useLeftIconSlot }}" name="left-icon" slot="left-icon" />
       <slot wx:if="{{ useRightIconSlot }}" name="right-icon" slot="right-icon" />
-    </van-field>
+    </mc-field>
   </view>
 
   <view
     wx:if="{{ showAction || useActionSlot }}"
-    class="van-search__action"
-    hover-class="van-search__action--hover"
+    class="mc-search__action"
+    hover-class="mc-search__action--hover"
     hover-stay-time="70"
   >
     <slot wx:if="{{ useActionSlot }}" name="action" />

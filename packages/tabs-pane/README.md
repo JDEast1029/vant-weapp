@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-tab": "path/to/@vant/weapp/dist/tab/index",
-  "van-tabs": "path/to/@vant/weapp/dist/tabs/index"
+  "mc-tab": "path/to/@vant/weapp/dist/tab/index",
+  "mc-tabs": "path/to/@vant/weapp/dist/tabs/index"
 }
 ```
 
@@ -18,12 +18,12 @@
 通过`active`设定当前激活标签对应的索引值，默认情况下启用第一个标签
 
 ```html
-<van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-  <van-tab title="标签 4">内容 4</van-tab>
-</van-tabs>
+<mc-tabs active="{{ active }}" bind:change="onChange">
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+  <mc-tab title="标签 4">内容 4</mc-tab>
+</mc-tabs>
 ```
 
 ```js
@@ -46,11 +46,11 @@ Page({
 在标签指定`name`属性的情况下，`active`的值为当前标签的`name`，默认启用第一个标签
 
 ```html
-<van-tabs active="a">
-  <van-tab title="标签 1" name="a">内容 1</van-tab>
-  <van-tab title="标签 2" name="b">内容 2</van-tab>
-  <van-tab title="标签 3" name="c">内容 3</van-tab>
-</van-tabs>
+<mc-tabs active="a">
+  <mc-tab title="标签 1" name="a">内容 1</mc-tab>
+  <mc-tab title="标签 2" name="b">内容 2</mc-tab>
+  <mc-tab title="标签 3" name="c">内容 3</mc-tab>
+</mc-tabs>
 ```
 
 ### 横向滚动
@@ -58,26 +58,26 @@ Page({
 多于 4 个标签时，Tab 可以横向滚动
 
 ```html
-<van-tabs active="{{ active }}">
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-  <van-tab title="标签 4">内容 4</van-tab>
-  <van-tab title="标签 5">内容 5</van-tab>
-  <van-tab title="标签 6">内容 6</van-tab>
-</van-tabs>
+<mc-tabs active="{{ active }}">
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+  <mc-tab title="标签 4">内容 4</mc-tab>
+  <mc-tab title="标签 5">内容 5</mc-tab>
+  <mc-tab title="标签 6">内容 6</mc-tab>
+</mc-tabs>
 ```
 
 ### 禁用标签
 
-设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`van-tabs`上监听`disabled`事件
+设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`mc-tabs`上监听`disabled`事件
 
 ```html
-<van-tabs bind:disabled="onClickDisabled">
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2" disabled>内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-</van-tabs>
+<mc-tabs bind:disabled="onClickDisabled">
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2" disabled>内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+</mc-tabs>
 ```
 
 ```javascript
@@ -96,22 +96,22 @@ Page({
 `Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格
 
 ```html
-<van-tabs type="card">
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-</van-tabs>
+<mc-tabs type="card">
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+</mc-tabs>
 ```
 
 ### 点击事件
 
-可以在`van-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和标识符
+可以在`mc-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和标识符
 
 ```html
-<van-tabs bind:click="onClick">
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-</van-tabs>
+<mc-tabs bind:click="onClick">
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+</mc-tabs>
 ```
 
 ```javascript
@@ -130,12 +130,12 @@ Page({
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
 
 ```html
-<van-tabs sticky>
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-  <van-tab title="标签 4">内容 4</van-tab>
-</van-tabs>
+<mc-tabs sticky>
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+  <mc-tab title="标签 4">内容 4</mc-tab>
+</mc-tabs>
 ```
 
 ### 切换动画
@@ -143,12 +143,12 @@ Page({
 可以通过`animated`来设置是否启用切换tab时的动画。
 
 ```html
-<van-tabs animated>
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-  <van-tab title="标签 4">内容 4</van-tab>
-</van-tabs>
+<mc-tabs animated>
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+  <mc-tab title="标签 4">内容 4</mc-tab>
+</mc-tabs>
 ```
 
 ### 滑动切换
@@ -156,12 +156,12 @@ Page({
 通过`swipeable`属性可以开启滑动切换标签页
 
 ```html
-<van-tabs swipeable>
-  <van-tab title="标签 1">内容 1</van-tab>
-  <van-tab title="标签 2">内容 2</van-tab>
-  <van-tab title="标签 3">内容 3</van-tab>
-  <van-tab title="标签 4">内容 4</van-tab>
-</van-tabs>
+<mc-tabs swipeable>
+  <mc-tab title="标签 1">内容 1</mc-tab>
+  <mc-tab title="标签 2">内容 2</mc-tab>
+  <mc-tab title="标签 3">内容 3</mc-tab>
+  <mc-tab title="标签 4">内容 4</mc-tab>
+</mc-tabs>
 ```
 
 ## API

@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-radio": "path/to/@vant/weapp/dist/radio/index",
-  "van-radio-group": "path/to/@vant/weapp/dist/radio-group/index"
+  "mc-radio": "path/to/@vant/weapp/dist/radio/index",
+  "mc-radio-group": "path/to/@vant/weapp/dist/radio-group/index"
 }
 ```
 
@@ -18,10 +18,10 @@
 通过`value`绑定值当前选中项的 name
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1">单选框 1</van-radio>
-  <van-radio name="2">单选框 2</van-radio>
-</van-radio-group>
+<mc-radio-group value="{{ radio }}" bind:change="onChange">
+  <mc-radio name="1">单选框 1</mc-radio>
+  <mc-radio name="2">单选框 2</mc-radio>
+</mc-radio-group>
 ```
 
 ```js
@@ -42,10 +42,10 @@ Page({
 通过`disabled`属性禁止选项切换，在`Radio`上设置`diabled`可以禁用单个选项
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange" disabled>
-  <van-radio name="1">单选框 1</van-radio>
-  <van-radio name="2">单选框 2</van-radio>
-</van-radio-group>
+<mc-radio-group value="{{ radio }}" bind:change="onChange" disabled>
+  <mc-radio name="1">单选框 1</mc-radio>
+  <mc-radio name="2">单选框 2</mc-radio>
+</mc-radio-group>
 ```
 
 ### 禁用文本点击
@@ -53,10 +53,10 @@ Page({
 通过设置`label-disabled`属性可以禁用单选框文本点击
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1" label-disabled>单选框 1</van-radio>
-  <van-radio name="2" label-disabled>单选框 2</van-radio>
-</van-radio-group>
+<mc-radio-group value="{{ radio }}" bind:change="onChange">
+  <mc-radio name="1" label-disabled>单选框 1</mc-radio>
+  <mc-radio name="2" label-disabled>单选框 2</mc-radio>
+</mc-radio-group>
 ```
 
 ### 自定义颜色
@@ -64,10 +64,10 @@ Page({
 通过`checked-color`属性设置选中状态的图标颜色
 
  ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1" checked-color="#07c160">单选框 1</van-radio>
-  <van-radio name="2" checked-color="#07c160">单选框 2</van-radio>
-</van-radio-group>
+<mc-radio-group value="{{ radio }}" bind:change="onChange">
+  <mc-radio name="1" checked-color="#07c160">单选框 1</mc-radio>
+  <mc-radio name="2" checked-color="#07c160">单选框 2</mc-radio>
+</mc-radio-group>
 
 ```
 
@@ -76,10 +76,10 @@ Page({
 通过`icon-size`属性可以自定义图标的大小
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1">单选框 1</van-radio>
-  <van-radio name="2" icon-size="25px">单选框 2</van-radio>
-</van-radio-group>
+<mc-radio-group value="{{ radio }}" bind:change="onChange">
+  <mc-radio name="1">单选框 1</mc-radio>
+  <mc-radio name="2" icon-size="25px">单选框 2</mc-radio>
+</mc-radio-group>
 ```
 
 ### 自定义图标
@@ -87,16 +87,16 @@ Page({
 通过`icon`插槽自定义图标，需要设置`use-icon-slot`属性
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio use-icon-slot value="{{ radio }}" name="1">
+<mc-radio-group value="{{ radio }}" bind:change="onChange">
+  <mc-radio use-icon-slot value="{{ radio }}" name="1">
     自定义图标
     <image slot="icon" src="{{ radio === '1' ? icon.active : icon.normal }}" />
-  </van-radio>
-  <van-radio use-icon-slot value="{{ radio }}" name="2">
+  </mc-radio>
+  <mc-radio use-icon-slot value="{{ radio }}" name="2">
     自定义图标
     <image slot="icon" src="{{ radio === '2' ? icon.active : icon.normal }}" />
-  </van-radio>
-</van-radio-group>
+  </mc-radio>
+</mc-radio-group>
 ```
 
 ```js
@@ -121,26 +121,26 @@ Page({
 此时你需要再引入`Cell`和`CellGroup`组件。
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-cell-group>
-    <van-cell
+<mc-radio-group value="{{ radio }}" bind:change="onChange">
+  <mc-cell-group>
+    <mc-cell
       title="单选框 1"
       clickable
       data-name="1"
       bind:click="onClick"
     >
-      <van-radio slot="right-icon" name="1" />
-    </van-cell>
-    <van-cell
+      <mc-radio slot="right-icon" name="1" />
+    </mc-cell>
+    <mc-cell
       title="单选框 2"
       clickable
       data-name="2"
       bind:click="onClick"
     >
-      <van-radio slot="right-icon" name="2" />
-    </van-cell>
-  </van-cell-group>
-</van-radio-group>
+      <mc-radio slot="right-icon" name="2" />
+    </mc-cell>
+  </mc-cell-group>
+</mc-radio-group>
 ```
 
 ```js

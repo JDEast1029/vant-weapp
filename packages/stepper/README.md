@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-stepper": "path/to/@vant/weapp/dist/stepper/index"
+  "mc-stepper": "path/to/@vant/weapp/dist/stepper/index"
 }
 ```
 
@@ -21,7 +21,7 @@
 通过`value`设置输入值，可以通过`change`事件监听到输入值的变化
 
 ```html
-<van-stepper value="{{ 1 }}" bind:change="onChange" />
+<mc-stepper value="{{ 1 }}" bind:change="onChange" />
 ```
 
 ```js
@@ -37,7 +37,7 @@ Page({
 通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为`1`
 
 ```html
-<van-stepper value="{{ 1 }}" step="2" />
+<mc-stepper value="{{ 1 }}" step="2" />
 ```
 
 ### 限制输入范围
@@ -45,7 +45,7 @@ Page({
 通过`min`和`max`属性限制输入值的范围
 
 ```html
-<van-stepper value="{{ 5 }}" min="5" max="8" />
+<mc-stepper value="{{ 5 }}" min="5" max="8" />
 ```
 
 ### 限制输入整数
@@ -53,7 +53,7 @@ Page({
 设置`integer`属性后，输入框将限制只能输入整数
 
 ```html
-<van-stepper value="{{ 1 }}" integer />
+<mc-stepper value="{{ 1 }}" integer />
 ```
 
 ### 禁用状态
@@ -61,7 +61,7 @@ Page({
 通过设置`disabled`属性来禁用步进器，禁用状态下无法点击按钮或修改输入框
 
 ```html
-<van-stepper value="{{ 1 }}" disabled />
+<mc-stepper value="{{ 1 }}" disabled />
 ```
 
 ### 关闭长按
@@ -69,7 +69,7 @@ Page({
 通过设置`long-press`属性决定步进器是否开启长按手势
 
 ```html
-<van-stepper value="{{ 1 }}" long-press="{{ false }}" />
+<mc-stepper value="{{ 1 }}" long-press="{{ false }}" />
 ```
 
 ### 固定小数位数
@@ -77,7 +77,7 @@ Page({
 通过设置`decimal-length`属性可以保留固定的小数位数
 
 ```html
-<van-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
+<mc-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
 ```
 
 ### 异步变更
@@ -85,7 +85,7 @@ Page({
 如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
 
 ```html
-<van-stepper value="{{ value }}" async-change bind:change="onChange" />
+<mc-stepper value="{{ value }}" async-change bind:change="onChange" />
 ```
 
 ```js
@@ -110,7 +110,7 @@ Page({
 通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
 
 ```html
-<van-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
+<mc-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
 ```
 
 ## API

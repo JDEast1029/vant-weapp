@@ -1,6 +1,6 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<van-cell
+<mc-cell
   size="{{ size }}"
   icon="{{ leftIcon }}"
   title="{{ label }}"
@@ -12,7 +12,7 @@
   title-width="{{ titleWidth }}"
   custom-style="{{ customStyle }}"
   arrow-direction="{{ arrowDirection }}"
-  custom-class="van-field"
+  custom-class="mc-field"
 >
   <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
@@ -65,29 +65,29 @@
       bind:focus="onFocus"
       bind:confirm="onConfirm"
     />
-    <van-icon
+    <mc-icon
       wx:if="{{ clearable && focused && value && !readonly }}"
       size="16px"
       name="clear"
-      class="van-field__clear-root van-field__icon-root"
+      class="mc-field__clear-root mc-field__icon-root"
       catch:touchstart="onClear"
     />
-    <view class="van-field__icon-container" bind:tap="onClickIcon">
-      <van-icon
+    <view class="mc-field__icon-container" bind:tap="onClickIcon">
+      <mc-icon
         wx:if="{{ rightIcon || icon }}"
         size="16px"
         name="{{ rightIcon || icon }}"
-        class="van-field__icon-root {{ iconClass }}"
+        class="mc-field__icon-root {{ iconClass }}"
         custom-class="right-icon-class"
       />
       <slot name="right-icon" />
       <slot name="icon" />
     </view>
-    <view class="van-field__button">
+    <view class="mc-field__button">
       <slot name="button" />
     </view>
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+  <view wx:if="{{ errorMessage }}" class="mc-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
     {{ errorMessage }}
   </view>
-</van-cell>
+</mc-cell>

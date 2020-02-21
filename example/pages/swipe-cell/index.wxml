@@ -28,5 +28,5 @@
   </van-swipe-cell>
 </demo-block>
 
-<van-dialog id="van-dialog" />
-<van-notify id="van-notify" />
+<van-modal id="mc-modal" />
+<van-notify id="mc-notify" />

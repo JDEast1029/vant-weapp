@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-icon": "path/to/@vant/weapp/dist/icon/index"
+  "mc-icon": "path/to/@vant/weapp/dist/icon/index"
 }
 ```
 
@@ -21,8 +21,8 @@
 `Icon`的`name`属性支持传入图标名称或图片链接
 
 ```html
-<van-icon name="close" />
-<van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
+<mc-icon name="close" />
+<mc-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
 ### 提示信息
@@ -30,9 +30,9 @@
 设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
-<van-icon name="chat" dot />
-<van-icon name="chat" info="9" />
-<van-icon name="chat" info="99+" />
+<mc-icon name="chat" dot />
+<mc-icon name="chat" info="9" />
+<mc-icon name="chat" info="99+" />
 ```
 
 ### 图标颜色
@@ -40,7 +40,7 @@
 设置`color`属性来控制图标颜色
 
 ```html
-<van-icon name="chat" color="red" />
+<mc-icon name="chat" color="red" />
 ```
 
 ### 图标大小
@@ -48,7 +48,7 @@
 设置`size`属性来控制图标大小
 
 ```html
-<van-icon name="chat" size="50px" />
+<mc-icon name="chat" size="50px" />
 ```
 
 ## 常见问题
@@ -69,7 +69,7 @@
 | color | 图标颜色 | *string* | `inherit` | - |
 | size | 图标大小，如 `20px`，`2em`，默认单位为`px` | *string \| number* | `inherit` | - |
 | custom-style | 自定义样式 | *string* | - | - |
-| class-prefix | 类名前缀 | *string* | `van-icon` | - |
+| class-prefix | 类名前缀 | *string* | `mc-icon` | - |
 
 ### Events
 

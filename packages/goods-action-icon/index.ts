@@ -1,10 +1,10 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { link } from '../mixins/link';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 import { Weapp } from 'definitions/weapp';
 
-VantComponent({
+McComponent({
   classes: ['icon-class', 'text-class'],
 
   mixins: [link, button, openType],

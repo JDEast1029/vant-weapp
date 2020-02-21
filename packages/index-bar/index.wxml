@@ -1,9 +1,9 @@
-<view class="van-index-bar">
+<view class="mc-index-bar">
   <slot />
 
   <view
     wx:if="{{ showSidebar }}"
-    class="van-index-bar__sidebar"
+    class="mc-index-bar__sidebar"
     catch:tap="onClick"
     catch:touchmove="onTouchMove"
     catch:touchend="onTouchStop"
@@ -12,7 +12,7 @@
     <view
       wx:for="{{ indexList }}"
       wx:key="index"
-      class="van-index-bar__index"
+      class="mc-index-bar__index"
       style="z-index: {{ zIndex + 1 }}; color: {{ activeAnchorIndex === index ? highlightColor : '' }}"
       data-index="{{ index }}"
     >

@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-field": "path/to/@vant/weapp/dist/field/index"
+  "mc-field": "path/to/@vant/weapp/dist/field/index"
 }
 ```
 
@@ -19,14 +19,14 @@
 ### 基础用法
 
 ```html
-<van-cell-group>
-  <van-field
+<mc-cell-group>
+  <mc-field
     value="{{ value }}"
     placeholder="请输入用户名"
     border="{{ false }}"
     bind:change="onChange"
   />
-</van-cell-group>
+</mc-cell-group>
 ```
 
 ```js
@@ -46,8 +46,8 @@ Page({
 根据`type`属性定义不同类型的输入框
 
 ```html
-<van-cell-group>
-  <van-field
+<mc-cell-group>
+  <mc-field
     value="{{ username }}"
     required
     clearable
@@ -57,7 +57,7 @@ Page({
     bind:click-icon="onClickIcon"
   />
 
-  <van-field
+  <mc-field
     value="{{ password }}"
     type="password"
     label="密码"
@@ -65,63 +65,63 @@ Page({
     required
     border="{{ false }}"
   />
-</van-cell-group>
+</mc-cell-group>
 ```
 
 ### 禁用输入框
 
 ```html
-<van-cell-group>
-  <van-field
+<mc-cell-group>
+  <mc-field
     value="输入框已禁用"
     label="用户名"
     left-icon="contact"
     disabled
     border="{{ false }}"
   />
-</van-cell-group>
+</mc-cell-group>
 ```
 
 ### 错误提示
 通过`error`或者`error-message`属性增加对应的错误提示
 
 ```html
-<van-cell-group>
-  <van-field
+<mc-cell-group>
+  <mc-field
     value="{{ username }}"
     label="用户名"
     placeholder="请输入用户名"
     error
   />
-  <van-field
+  <mc-field
     value="{{ phone }}"
     label="手机号"
     placeholder="请输入手机号"
     error-message="手机号格式错误"
     border="{{ false }}"
   />
-</van-cell-group>
+</mc-cell-group>
 ```
 ### 内容对齐方式
 可以通过`input-align`属性设置内容的对齐方式
 
 ```html
- <van-cell-group>
-    <van-field
+ <mc-cell-group>
+    <mc-field
       value="{{ username3 }}"
       label="用户名"
       placeholder="请输入用户名"
       input-align="right"
     />
-  </van-cell-group>
+  </mc-cell-group>
 ```
 
 ### 高度自适应
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
 ```html
-<van-cell-group>
-  <van-field
+<mc-cell-group>
+  <mc-field
     value="{{ message }}"
     label="留言"
     type="textarea"
@@ -129,15 +129,15 @@ Page({
     autosize
     border="{{ false }}"
   />
-</van-cell-group>
+</mc-cell-group>
 ```
 
 ### 插入按钮
 通过 button slot 可以在输入框尾部插入按钮
 
 ```html
-<van-cell-group>
-  <van-field
+<mc-cell-group>
+  <mc-field
     value="{{ sms }}"
     center
     clearable
@@ -146,9 +146,9 @@ Page({
     border="{{ false }}"
     use-button-slot
   >
-    <van-button slot="button" size="small" type="primary">发送验证码</van-button>
-  </van-field>
-</van-cell-group>
+    <mc-button slot="button" size="small" type="primary">发送验证码</mc-button>
+  </mc-field>
+</mc-cell-group>
 ```
 
 ## 常见问题

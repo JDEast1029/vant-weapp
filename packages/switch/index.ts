@@ -1,17 +1,17 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { BLUE, GRAY_DARK } from '../common/color';
 
-VantComponent({
+McComponent({
   field: true,
 
   classes: ['node-class'],
 
   props: {
-    checked: {
+    value: {
       type: null,
       observer(value) {
         const loadingColor = this.getLoadingColor(value);
-        this.setData({ value, loadingColor });
+        this.setData({ checked: value, loadingColor });
       }
     },
     loading: Boolean,
@@ -33,7 +33,7 @@ VantComponent({
   },
 
   created() {
-    const { checked: value } = this.data;
+    const { value } = this.data;
     const loadingColor = this.getLoadingColor(value);
 
     this.setData({ value, loadingColor });
@@ -48,7 +48,7 @@ VantComponent({
     onClick() {
       const { activeValue, inactiveValue } = this.data;
       if (!this.data.disabled && !this.data.loading) {
-        const checked = this.data.checked === activeValue;
+        const checked = this.data.value === activeValue;
         const value = checked ? inactiveValue : activeValue;
         this.$emit('input', value);
         this.$emit('change', value);

@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { addUnit } from '../common/utils';
 
-VantComponent({
+McComponent({
   relation: {
     name: 'grid-item',
     type: 'descendant',

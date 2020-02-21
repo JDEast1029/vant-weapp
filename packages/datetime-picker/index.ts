@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { isDef } from '../common/utils';
 import { pickerProps } from '../picker/shared';
 
@@ -40,7 +40,7 @@ function getMonthEndDay(year: number, month: number): number {
 
 const defaultFormatter = (_, value) => value;
 
-VantComponent({
+McComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
   props: {
@@ -116,7 +116,7 @@ VantComponent({
 
     getPicker() {
       if (this.picker == null) {
-        this.picker = this.selectComponent('.van-datetime-picker');
+        this.picker = this.selectComponent('.mc-datetime-picker');
 
         const { picker } = this;
         const { setColumnValues } = picker;

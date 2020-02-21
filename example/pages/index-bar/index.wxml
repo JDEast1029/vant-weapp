@@ -2,7 +2,7 @@
   active="{{ activeTab }}"
   bind:change="onChange"
 >
-  <van-tab title="基础用法">
+  <van-tabs-pane title="基础用法">
     <van-index-bar
       wx:if="{{ activeTab === 0 }}"
       scroll-top="{{ scrollTop }}"
@@ -18,9 +18,9 @@
         <van-cell title="文本" />
       </view>
     </van-index-bar>
-  </van-tab>
+  </van-tabs-pane>
 
-  <van-tab title="自定义索引列表">
+  <van-tabs-pane title="自定义索引列表">
     <van-index-bar
       wx:if="{{ activeTab === 1 }}"
       index-list="{{ customIndexList }}"
@@ -41,5 +41,5 @@
         <van-cell title="文本" />
       </view>
     </van-index-bar>
-  </van-tab>
+  </van-tabs-pane>
 </van-tabs>

@@ -6,11 +6,11 @@
 
 ```json
 "usingComponents": {
-  "van-uploader": "path/to/@vant/weapp/dist/uploader/index"
+  "mc-uploader": "path/to/@vant/weapp/dist/uploader/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
@@ -19,7 +19,7 @@
 文件上传完毕后会触发`after-read`回调函数，获取到对应的文件的临时地址，然后再使用`wx.uploadFile`将图片上传到远程服务器上
 
 ```html
-<van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+<mc-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
 ```
 
 ```js
@@ -53,7 +53,7 @@ Page({
 通过向组件传入`file-list`属性，可以绑定已经上传的图片列表，并展示图片列表的预览图
 
 ```html
-<van-uploader file-list="{{ fileList }}" />
+<mc-uploader file-list="{{ fileList }}" />
 ```
 
 ```js
@@ -78,7 +78,7 @@ Page({
 通过`max-count`属性可以限制上传文件的数量，上传数量达到限制后，会自动隐藏上传区域
 
 ```html
-<van-uploader
+<mc-uploader
   file-list="{{ fileList }}"
   max-count="2"
   bind:after-read="afterRead"
@@ -90,9 +90,9 @@ Page({
 通过插槽可以自定义上传区域的样式
 
 ```html
-<van-uploader>
-  <van-button icon="photo" type="primary">上传图片</van-button>
-</van-uploader>
+<mc-uploader>
+  <mc-button icon="photo" type="primary">上传图片</mc-button>
+</mc-uploader>
 ```
 
 ### 上传前校验
@@ -100,7 +100,7 @@ Page({
 将`use-before-read`属性设置为`true`，然后绑定 `before-read` 事件可以在上传前进行校验，调用 `callback` 方法传入 `true` 表示校验通过，传入 `false` 表示校验失败。
 
 ```html
-<van-uploader
+<mc-uploader
   file-list="{{ fileList }}"
   use-before-read
   bind:before-read="beforeRead"

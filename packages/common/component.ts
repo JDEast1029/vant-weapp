@@ -1,5 +1,5 @@
 import { basic } from '../mixins/basic';
-import { VantComponentOptions, CombinedComponentInstance } from 'definitions/index';
+import { McComponentOptions, CombinedComponentInstance } from 'definitions/index';
 
 const relationFunctions = {
   ancestor: {
@@ -29,9 +29,9 @@ function mapKeys(source: object, target: object, map: object) {
   });
 }
 
-function makeRelation(options, vantOptions, relation) {
+function makeRelation(options, mcOptions, relation) {
   const { type, name, linked, unlinked, linkChanged } = relation;
-  const { beforeCreate, destroyed } = vantOptions;
+  const { beforeCreate, destroyed } = mcOptions;
   if (type === 'descendant') {
     options.created = function () {
       beforeCreate && beforeCreate.bind(this)();
@@ -60,8 +60,8 @@ function makeRelation(options, vantOptions, relation) {
   });
 }
 
-function VantComponent<Data, Props, Methods>(
-  vantOptions: VantComponentOptions<
+function McComponent<Data, Props, Methods>(
+  mcOptions: McComponentOptions<
     Data,
     Props,
     Methods,
@@ -70,7 +70,7 @@ function VantComponent<Data, Props, Methods>(
 ): void {
   const options: any = {};
 
-  mapKeys(vantOptions, options, {
+  mapKeys(mcOptions, options, {
     data: 'data',
     props: 'properties',
     mixins: 'behaviors',
@@ -83,9 +83,9 @@ function VantComponent<Data, Props, Methods>(
     classes: 'externalClasses'
   });
 
-  const { relation } = vantOptions;
+  const { relation } = mcOptions;
   if (relation) {
-    makeRelation(options, vantOptions, relation);
+    makeRelation(options, mcOptions, relation);
   }
 
   // add default externalClasses
@@ -97,7 +97,7 @@ function VantComponent<Data, Props, Methods>(
   options.behaviors.push(basic);
 
   // map field to form-field behavior
-  if (vantOptions.field) {
+  if (mcOptions.field) {
     options.behaviors.push('wx://form-field');
   }
 
@@ -110,4 +110,4 @@ function VantComponent<Data, Props, Methods>(
   Component(options);
 }
 
-export { VantComponent };
+export { McComponent };

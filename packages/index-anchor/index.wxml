@@ -1,9 +1,9 @@
 <view
-  class="van-index-anchor-wrapper"
+  class="mc-index-anchor-wrapper"
   style="{{ wrapperStyle }}"
 >
   <view
-    class="van-index-anchor {{ active ? 'van-index-anchor--active van-hairline--bottom' : '' }}"
+    class="mc-index-anchor {{ active ? 'mc-index-anchor--active mc-hairline--bottom' : '' }}"
     style="{{ anchorStyle }}"
   >
     <slot wx:if="{{ useSlot }}"/>

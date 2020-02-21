@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { transition } from '../mixins/transition';
 
-VantComponent({
+McComponent({
   classes: [
     'enter-class',
     'enter-active-class',
@@ -17,7 +17,7 @@ VantComponent({
     round: Boolean,
     closeable: Boolean,
     customStyle: String,
-    overlayStyle: String,
+    maskStyle: String,
     transition: {
       type: String,
       observer: 'observeClass'
@@ -26,7 +26,7 @@ VantComponent({
       type: Number,
       value: 100
     },
-    overlay: {
+    mask: {
       type: Boolean,
       value: true
     },
@@ -38,7 +38,7 @@ VantComponent({
       type: String,
       value: 'top-right'
     },
-    closeOnClickOverlay: {
+    maskClosable: {
       type: Boolean,
       value: true
     },
@@ -66,10 +66,10 @@ VantComponent({
       this.$emit('close');
     },
 
-    onClickOverlay() {
-      this.$emit('click-overlay');
+    onClickMask() {
+      this.$emit('click-mask');
 
-      if (this.data.closeOnClickOverlay) {
+      if (this.data.maskClosable) {
         this.$emit('close');
       }
     },

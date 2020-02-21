@@ -1,7 +1,7 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { BLUE } from '../common/color';
 
-VantComponent({
+McComponent({
   props: {
     inactive: Boolean,
     percentage: Number,

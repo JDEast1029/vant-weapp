@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-cell": "path/to/@vant/weapp/dist/cell/index",
-  "van-cell-group": "path/to/@vant/weapp/dist/cell-group/index"
+  "mc-cell": "path/to/@vant/weapp/dist/cell/index",
+  "mc-cell-group": "path/to/@vant/weapp/dist/cell-group/index"
 }
 ```
 
@@ -18,10 +18,10 @@
 `Cell`可以单独使用，也可以与`CellGroup`搭配使用。`CellGroup`可以为`Cell`提供上下外边框。
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
-</van-cell-group>
+<mc-cell-group>
+  <mc-cell title="单元格" value="内容" />
+  <mc-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+</mc-cell-group>
 ```
 
 ### 单元格大小
@@ -29,8 +29,8 @@
 通过`size`属性可以控制单元格的大小
 
 ```html
-<van-cell title="单元格" value="内容" size="large" />
-<van-cell title="单元格" value="内容" size="large" label="描述信息" />
+<mc-cell title="单元格" value="内容" size="large" />
+<mc-cell title="单元格" value="内容" size="large" label="描述信息" />
 ```
 
 ### 展示图标
@@ -38,7 +38,7 @@
 通过`icon`属性在标题左侧展示图标
 
 ```html
-<van-cell title="单元格" icon="location-o" />
+<mc-cell title="单元格" icon="location-o" />
 ```
 
 ### 展示箭头
@@ -46,9 +46,9 @@
 设置`is-link`属性后会在单元格右侧显示箭头，并且可以通过`arrow-direction`属性控制箭头方向
 
 ```html
-<van-cell title="单元格" is-link />
-<van-cell title="单元格" is-link value="内容" />
-<van-cell title="单元格" is-link value="内容" arrow-direction="down" />
+<mc-cell title="单元格" is-link />
+<mc-cell title="单元格" is-link value="内容" />
+<mc-cell title="单元格" is-link value="内容" arrow-direction="down" />
 ```
 
 ### 页面跳转
@@ -56,7 +56,7 @@
 可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型
 
 ```html
-<van-cell
+<mc-cell
   is-link
   title="单元格"
   link-type="navigateTo"
@@ -69,12 +69,12 @@
 通过`CellGroup`的`title`属性可以指定分组标题
 
 ```html
-<van-cell-group title="分组1">
-  <van-cell title="单元格" value="内容" />
-</van-cell-group>
-<van-cell-group title="分组2">
-  <van-cell title="单元格" value="内容" />
-</van-cell-group>
+<mc-cell-group title="分组1">
+  <mc-cell title="单元格" value="内容" />
+</mc-cell-group>
+<mc-cell-group title="分组2">
+  <mc-cell title="单元格" value="内容" />
+</mc-cell-group>
 ```
 
 ### 使用插槽
@@ -82,15 +82,15 @@
 如以上用法不能满足你的需求，可以使用插槽来自定义内容
 
 ```html
-<van-cell value="内容" icon="shop-o" is-link>
+<mc-cell value="内容" icon="shop-o" is-link>
   <view slot="title">
-    <view class="van-cell-text">单元格</view>
-    <van-tag type="danger">标签</van-tag>
+    <view class="mc-cell-text">单元格</view>
+    <mc-tag type="danger">标签</mc-tag>
   </view>
-</van-cell>
-<van-cell title="单元格">
-  <van-icon slot="right-icon" name="search" class="custom-icon" />
-</van-cell>
+</mc-cell>
+<mc-cell title="单元格">
+  <mc-icon slot="right-icon" name="search" class="custom-icon" />
+</mc-cell>
 ```
 
 ### 垂直居中
@@ -98,7 +98,7 @@
 通过`center`属性可以让`Cell`的左右内容都垂直居中
 
 ```html
-<van-cell center title="单元格" value="内容" label="描述信息" />
+<mc-cell center title="单元格" value="内容" label="描述信息" />
 ```
 
 ## API

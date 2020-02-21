@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "van-button": "../button/index",
-    "van-icon": "../icon/index"
+    "mc-button": "../button/index",
+    "mc-icon": "../icon/index"
   }
 }

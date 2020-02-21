@@ -1,16 +1,16 @@
-<van-overlay
+<mc-overlay
   wx:if="{{ mask || forbidClick }}"
   show="{{ show }}"
   z-index="{{ zIndex }}"
   custom-style="{{ mask ? '' : 'background-color: transparent;' }}"
 />
-<van-transition
+<mc-transition
   show="{{ show }}"
   custom-style="z-index: {{ zIndex }}"
-  custom-class="van-toast__container"
+  custom-class="mc-toast__container"
 >
   <view
-    class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}"
+    class="mc-toast mc-toast--{{ type === 'text' ? 'text' : 'icon' }} mc-toast--{{ position }}"
     catch:touchmove="noop"
   >
     <!-- text only -->
@@ -18,16 +18,16 @@
 
     <!-- with icon -->
     <block wx:else>
-      <van-loading
+      <mc-loading
         wx:if="{{ type === 'loading' }}"
         color="white"
         type="{{ loadingType }}"
-        custom-class="van-toast__loading"
+        custom-class="mc-toast__loading"
       />
-      <van-icon wx:else class="van-toast__icon" name="{{ type }}" />
-      <text wx:if="{{ message }}" class="van-toast__text">{{ message }}</text>
+      <mc-icon wx:else class="mc-toast__icon" name="{{ type }}" />
+      <text wx:if="{{ message }}" class="mc-toast__text">{{ message }}</text>
     </block>
 
     <slot />
   </view>
-</van-transition>
+</mc-transition>

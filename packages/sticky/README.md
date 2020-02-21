@@ -10,11 +10,11 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ```json
 "usingComponents": {
-  "van-sticky": "path/to/@vant/weapp/dist/sticky/index"
+  "mc-sticky": "path/to/@vant/weapp/dist/sticky/index"
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Mc Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 
@@ -23,9 +23,9 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 将内容包裹在`Sticky`组件内即可
 
 ```html
-<van-sticky>
-  <van-button type="primary">基础用法</van-button>
-</van-sticky>
+<mc-sticky>
+  <mc-button type="primary">基础用法</mc-button>
+</mc-sticky>
 ```
 
 ### 吸顶距离
@@ -33,9 +33,9 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 通过`offset-top`属性可以设置组件在吸顶时与顶部的距离
 
 ```html
-<van-sticky offset-top="{{ 50 }}">
-  <van-button type="info">吸顶距离</van-button>
-</van-sticky>
+<mc-sticky offset-top="{{ 50 }}">
+  <mc-button type="info">吸顶距离</mc-button>
+</mc-sticky>
 ```
 
 ### 指定容器
@@ -44,11 +44,11 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ```html
 <view id="container" style="height: 150px;">
-  <van-sticky container="{{ container }}">
-    <van-button type="warning">
+  <mc-sticky container="{{ container }}">
+    <mc-button type="warning">
       指定容器
-    </van-button>
-  </van-sticky>
+    </mc-button>
+  </mc-sticky>
 </view>
 ```
 

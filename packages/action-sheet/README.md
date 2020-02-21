@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-action-sheet": "path/to/@vant/weapp/dist/action-sheet/index"
+  "mc-action-sheet": "path/to/@vant/weapp/dist/action-sheet/index"
 }
 ```
 
@@ -18,7 +18,7 @@
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<van-action-sheet
+<mc-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   bind:close="onClose"
@@ -60,7 +60,7 @@ Page({
 选项可以设置为加载状态或禁用状态。
 
 ```html
-<van-action-sheet
+<mc-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   cancel-text="取消"
@@ -85,7 +85,7 @@ Page({
 设置`cancel-text`属`性后，会在底部展示取消按钮，点击后关闭当前菜单
 
 ```html
-<van-action-sheet
+<mc-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   cancel-text="取消"
@@ -97,7 +97,7 @@ Page({
 设置`description`属性后，会在选项上方显示描述信息
 
 ```html
-<van-action-sheet
+<mc-action-sheet
   show="{{ show }}"
   :actions="actions"
   description="这是一段描述信息"
@@ -109,9 +109,9 @@ Page({
 通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容
 
 ```html
-<van-action-sheet show="{{ show }}" title="标题">
+<mc-action-sheet show="{{ show }}" title="标题">
   <view>内容</view>
-</van-action-sheet>
+</mc-action-sheet>
 ```
 
 ### 微信开放能力
@@ -119,7 +119,7 @@ Page({
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<van-action-sheet
+<mc-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   bind:close="onClose"

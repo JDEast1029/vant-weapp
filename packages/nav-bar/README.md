@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-nav-bar": "path/to/@vant/weapp/dist/nav-bar/index"
+  "mc-nav-bar": "path/to/@vant/weapp/dist/nav-bar/index"
 }
 ```
 
@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```html
-<van-nav-bar
+<mc-nav-bar
   title="标题"
   left-text="返回"
   right-text="按钮"
@@ -40,9 +40,9 @@ Page({
 通过 slot 定制内容
 
 ```html
-<van-nav-bar title="标题" left-text="返回" left-arrow>
-  <van-icon name="search" slot="right" />
-</van-nav-bar>
+<mc-nav-bar title="标题" left-text="返回" left-arrow>
+  <mc-icon name="search" slot="right" />
+</mc-nav-bar>
 ```
 
 ## API

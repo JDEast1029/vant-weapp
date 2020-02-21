@@ -1,10 +1,10 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 
-VantComponent({
+McComponent({
   relation: {
     name: 'tabs',
     type: 'ancestor',
-    current: 'tab',
+    current: 'tabs-pane',
   },
 
   props: {

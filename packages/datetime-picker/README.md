@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-datetime-picker": "path/to/@vant/weapp/dist/datetime-picker/index"
+  "mc-datetime-picker": "path/to/@vant/weapp/dist/datetime-picker/index"
 }
 ```
 
@@ -21,7 +21,7 @@
 `value` 为时间戳
 
 ```html
-<van-datetime-picker
+<mc-datetime-picker
   type="datetime"
   value="{{ currentDate }}"
   min-date="{{ minDate }}"
@@ -53,7 +53,7 @@ Page({
 `value` 为时间戳，通过传入 `formatter` 函数对选项文字进行处理
 
 ```html
-<van-datetime-picker
+<mc-datetime-picker
   type="date"
   value="{{ currentDate }}"
   bind:input="onInput"
@@ -90,7 +90,7 @@ Page({
 `value` 为时间戳
 
 ```html
-<van-datetime-picker
+<mc-datetime-picker
   type="year-month"
   value="{{ currentDate }}"
   min-date="{{ minDate }}"
@@ -118,7 +118,7 @@ Page({
 `value` 为字符串
 
 ```html
-<van-datetime-picker
+<mc-datetime-picker
   type="time"
   value="{{ currentDate }}"
   min-hour="{{ minHour }}"
@@ -148,7 +148,7 @@ Page({
 通过传入 `filter` 函数，可以对选项数组进行过滤，实现自定义时间间隔
 
 ```html
-<van-datetime-picker
+<mc-datetime-picker
   type="time"
   value="{{ currentDate }}"
   filter="{{ filter }}"

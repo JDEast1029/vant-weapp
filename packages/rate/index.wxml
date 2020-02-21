@@ -1,18 +1,18 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view
-  class="van-rate custom-class"
+  class="mc-rate custom-class"
   bind:touchmove="onTouchMove"
 >
   <view
-    class="van-rate__item"
+    class="mc-rate__item"
     wx:for="{{ innerCountArray }}"
     wx:key="index"
     style="padding-right: {{ index !== count - 1 ? utils.addUnit(gutter) : '' }}"
   >
-    <van-icon
+    <mc-icon
       name="{{ index + 1 <= innerValue ? icon : voidIcon }}"
-      class="van-rate__icon"
+      class="mc-rate__icon"
       style="font-size: {{ utils.addUnit(size) }}"
       custom-class="icon-class"
       data-score="{{ index }}"
@@ -20,7 +20,7 @@
       bind:click="onSelect"
     />
 
-    <van-icon
+    <mc-icon
       wx:if="{{ allowHalf }}"
       name="{{ index + 0.5 <= innerValue ? icon : voidIcon }}"
       class="{{ utils.bem('rate__icon', ['half']) }}"

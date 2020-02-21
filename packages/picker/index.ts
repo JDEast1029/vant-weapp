@@ -1,4 +1,4 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { pickerProps } from './shared';
 import { Weapp } from 'definitions/weapp';
 
@@ -7,7 +7,7 @@ interface Column {
   defaultIndex?: number;
 }
 
-VantComponent({
+McComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
   props: {
@@ -29,7 +29,7 @@ VantComponent({
       value: [],
       observer(columns = []) {
         this.simple = columns.length && !columns[0].values;
-        this.children = this.selectAllComponents('.van-picker__column');
+        this.children = this.selectAllComponents('.mc-picker__column');
 
         if (Array.isArray(this.children) && this.children.length) {
           this.setColumns().catch(() => {});

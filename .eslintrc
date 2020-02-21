@@ -9,5 +9,9 @@
     "wx": false,
     "Behavior": false
   },
-  "extends": ["@vant"]
+  "extends": ["@vant"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": 0,
+    "no-unused-vars": 0
+  }
 }

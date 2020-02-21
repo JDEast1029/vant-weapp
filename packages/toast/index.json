@@ -1,9 +1,9 @@
 {
   "component": true,
   "usingComponents": {
-    "van-icon": "../icon/index",
-    "van-loading": "../loading/index",
-    "van-overlay": "../overlay/index",
-    "van-transition": "../transition/index"
+    "mc-icon": "../icon/index",
+    "mc-loading": "../loading/index",
+    "mc-overlay": "../overlay/index",
+    "mc-transition": "../transition/index"
   }
 }

@@ -1,17 +1,17 @@
-import { VantComponent } from '../common/component';
+import { McComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
 import { isDef, addUnit } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
-VantComponent({
+McComponent({
   mixins: [touch],
 
   classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
 
   relation: {
-    name: 'tab',
+    name: 'tabs-pane',
     type: 'descendant',
     current: 'tabs',
     linked(target) {
@@ -115,7 +115,7 @@ VantComponent({
 
   mounted() {
     this.setData({
-      container: () => this.createSelectorQuery().select('.van-tabs')
+      container: () => this.createSelectorQuery().select('.mc-tabs')
     }, () => {
       this.setLine(true);
       this.scrollIntoView();
@@ -232,7 +232,7 @@ VantComponent({
         lineHeight
       } = this.data;
 
-      this.getRect('.van-tab', true).then(
+      this.getRect('.mc-tab', true).then(
         (rects: WechatMiniprogram.BoundingClientRectCallbackResult[] = []) => {
           const rect = rects[currentIndex];
           if (rect == null) {
@@ -279,8 +279,8 @@ VantComponent({
       }
 
       Promise.all([
-        this.getRect('.van-tab', true),
-        this.getRect('.van-tabs__nav')
+        this.getRect('.mc-tab', true),
+        this.getRect('.mc-tabs__nav')
       ]).then(
         ([tabRects, navRect]: [
           WechatMiniprogram.BoundingClientRectCallbackResult[],

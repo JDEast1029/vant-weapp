@@ -78,8 +78,8 @@ export default [
         title: 'Switch 开关'
       },
       {
-        path: '/uploader',
-        title: 'Uploader 文件上传'
+        path: '/upload',
+        title: 'Upload 文件上传'
       }
     ]
   },
@@ -92,8 +92,8 @@ export default [
         title: 'ActionSheet 上拉菜单'
       },
       {
-        path: '/dialog',
-        title: 'Dialog 弹出框'
+        path: '/modal',
+        title: 'Modal 弹出框'
       },
       {
         path: '/dropdown-menu',

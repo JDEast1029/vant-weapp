@@ -5,11 +5,11 @@
   style="color: {{ active ? activeColor : inactiveColor }}"
   bind:tap="onClick"
 >
-  <view class="van-tabbar-item__icon">
-    <van-icon
+  <view class="mc-tabbar-item__icon">
+    <mc-icon
       wx:if="{{ icon }}"
       name="{{ icon }}"
-      custom-class="van-tabbar-item__icon__inner"
+      custom-class="mc-tabbar-item__icon__inner"
     />
     <block wx:else>
       <slot
@@ -18,13 +18,13 @@
       />
       <slot wx:else name="icon" />
     </block>
-    <van-info
+    <mc-info
       dot="{{ dot }}"
       info="{{ info }}"
-      custom-class="van-tabbar-item__info"
+      custom-class="mc-tabbar-item__info"
     />
   </view>
-  <view class="van-tabbar-item__text">
+  <view class="mc-tabbar-item__text">
     <slot />
   </view>
 </view>
