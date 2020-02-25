@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+      "mc-popup": "../popup/index",
+      "mc-view": "../view"
+    }
+  }
+  

@@ -1,0 +1,18 @@
+<view class="vcm-cascader-col vc-hack-scroll">
+    <view 
+        wx:for="{{ dataSource }}"
+        wx:key="index"
+        wx:for-item="item"
+        wx:for-index="index"
+        class="{{ value === item.value : 'is-select' : '' }} vcm-cascader-col__item"
+        bindtap="handleClick(item.value, index)"
+    >
+        <span class="vcm-cascader-col__label">{{ item.label }}</span>
+        <mc-loading wx:if="value === item.value && item.loading" size="16px"/>
+        <mc-icon 
+            wx:elif="value === item.value" 
+            class="vcm-cascader-col__select" 
+            name="success" 
+            color="green" />
+    </view>
+</view>

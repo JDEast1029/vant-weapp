@@ -1,0 +1,20 @@
+<view class="custom-class mc-picker" bind:click="handleClick">
+    <slot 
+        wx:if="useSlot" 
+    />
+    <mc-cell 
+        wx:else 
+        title="{{ label }}"
+        value="{{ formatterValue }}"
+        is-link
+    />
+    <mc-core 
+        visible="{{ visible }}"
+        dataSource="{{ dataSource }}"
+        title="{{ title }}"
+        cancelText="{{ cancelText }}"
+        showToolbar="{{ showToolbar }}"
+        okText="{{ okText }}"
+        value="{{ value }}"
+        loadData="{{ loadData }}"">
+</view>
