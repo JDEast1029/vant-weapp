@@ -30,7 +30,7 @@ McComponent({
         this.resetIndex();
       }
     },
-    loadData: Function,
+    hasLoadData: Boolean,
     changeOnSelect: {
       type: Boolean,
       value: false
@@ -96,7 +96,7 @@ McComponent({
       let data = source && source.map((i: { value: any; label: any; children: string | any[]; }) => ({
         value: i.value,
         label: i.label,
-        hasChildren: !!(i.children && (i.children.length > 0 || this.data.loadData)),
+        hasChildren: !!(i.children && (i.children.length > 0) || this.data.hasLoadData),
         loading: false
       }));
       return data;
@@ -141,12 +141,15 @@ McComponent({
 				/**
 				 * 异步加载数据
 				 */
-        if (this.data.loadData && children && children.length === 0) {
+        if (this.data.hasLoadData && children && children.length === 0) {
           let rebuildData = `rebuildData[${colIndex}][${rowIndex}].loading`;
           this.setData({
             [rebuildData]: true
           });
-          let res = await this.data.loadData();
+          let res;
+          this.$emit('load', async (callback) => {
+            res = await callback()
+          })
 					/**
 					 * TODO: 优化，dataSource -> cloneData?
 					 */

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { McComponent } from '../common/component';
 import { getSelectedData } from '../common/utils';
 
@@ -14,14 +15,10 @@ McComponent({
             }
         },
         label: String,
-        loadData: Function,
+        hasLoadData: Boolean,
         extra: {
             type: String,
             value: '请选择'
-        },
-        formatter: {
-            type: Function,
-            value: (v: any) => (!v ? v : v.join(','))
         },
         title: {
 			type: String,
@@ -51,47 +48,37 @@ McComponent({
 
     data: {
         currentValue: [],
-        visible: false
-    },
+		visible: false,
+		formatterValue: '',
+	},
+	
+	observers: {
+		'currentValue, dataSource': function(currentValue, dataSource) {
+			const { label = [] } = getSelectedData(this.data.currentValue, this.data.dataSource);
+			const val =  this.formatter(label) || this.data.extra;
+			this.setData({
+				formatterValue: val
+			})
+		}
+	},
 
     methods: {
-        formatterValue() {
-            const { label = [] } = getSelectedData(this.data.currentValue, this.data.dataSource);
-			return this.formatter(label) || this.data.extra;
-        },
+		formatter(v) {
+			return !v ? v : v.join(',');
+		},
 
         async handleClick() {
             try {
-				if ((!this.data.dataSource || this.data.dataSource.length === 0) && this.loadData) {
+				if ((!this.data.dataSource || this.data.dataSource.length === 0) && this.hasLoadData) {
 					// 数据加载完成后，用户需要绑定到dataScource
 					await this.loadData();
+					this.$emit('load', async (callback) => {
+						await callback()
+					});
                 }
                 this.setData({
                     visible: true
                 });
-				/**
-				 * 有待优化，dataSource源数据异步
-				 */
-				// let { dataSource, loadData, title, cancelText, okText, showToolbar, value, show } = this.data;
-				// Func.popup({
-				// 	dataSource,
-				// 	title,
-				// 	cancelText,
-				// 	showToolbar,
-				// 	show,
-				// 	okText,
-				// 	value,
-				// 	loadData,
-				// 	onOk: (v, label, data) => {
-				// 		this.data.currentValue = v;
-				// 		this.$emit('ok', v, label, data);
-				// 		this.sync(label);
-				// 	},
-				// 	onCancel: res => {
-				// 		this.$emit('cancel');
-				// 	},
-				// 	getInstance: vm => this.pickerInstance = vm
-				// });
 			} catch (e) {
 				throw new Error(`m-cascader: ${e}`);
 			}

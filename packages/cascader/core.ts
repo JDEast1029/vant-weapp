@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { McComponent } from '../common/component';
 import { getSelectedData } from '../common/utils';
 
@@ -27,7 +28,7 @@ McComponent({
 			type: Array,
             value: [],
 		},
-		loadData: Function,
+		hasLoadData: Boolean,
 		changeOnSelect: {
 			type: Boolean,
 			value: false
