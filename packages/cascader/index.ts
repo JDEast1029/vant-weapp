@@ -84,9 +84,16 @@ McComponent({
 			}
         },
         handleClose() {
+			this.$emit('close');
             this.setData({
                 visible: false
-            })
-        }
+            });
+		},
+		handleCancel() {
+			this.$emit('cancel');
+			this.setData({
+                visible: false
+            });
+		}
     }
 });

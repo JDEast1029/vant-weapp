@@ -76,7 +76,7 @@ McComponent({
     /**
  * 重置index
  */
-    async resetIndex() {
+    resetIndex() {
       if (this.data.currentValue.length === 0 || this.data.rebuildData.length === 0) {
         this.setData({
           currentIndex: 0
