@@ -177,13 +177,21 @@ uploadFilePromise(fileName, chooseResult) {
 | capture | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | *string \| string[]* | `['album', 'camera']` | - |
 | disabled | 是否禁用文件上传 | *boolean* | `false` | - |
 | max-size | 文件大小限制，单位为`byte` | *number* | - | - |
-| max-count | 文件上传数量限制 | *number* | - | - |
+| max | 文件上传数量限制 | *number* | - | - |
 | upload-text | 上传区域文字提示 | *string* | - | - |
 | image-fit | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性 | *string* | `scaleToFill` | - |
-| use-before-read | 是否开启文件读取前事件 | *boolean* | - | - |
+| use-file-before | 是否开启文件读取前事件 | *boolean* | - | - |
+| use-post-before | 是否开启上传前的操作 | *boolean* | - | - |
+| use-post-after | 是否开启上传后的操作 | *boolean* | - | - |
 | camera | 当 accept 为 `video` 时生效，可选值为 `back` `front` | *string* | - | - |
 | compressed | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true` | *boolean* | - | - |
 | max-duration | 当 accept 为 `video` 时生效，拍摄视频最长拍摄时间，单位秒 | *number* | - | - |
+| mode | 模式 | *String* | `image` | `image`,`video`,`file` |
+| url | 上传的地址 | *String* | - | - |
+| headers | 上传请求的header | *Object* | - | - |
+| extra | 上传请求的额外参数 | *Object* | - | - |
+| uploadName | 上传接口接收文件的名字 | *String* | `file` | - |
+| dataSource | 展示的文件 | *Array* | `[]` | - |
 
 ### Slot
 
@@ -195,8 +203,9 @@ uploadFilePromise(fileName, chooseResult) {
 
 | 事件名 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| bind:before-read | 文件读取前，在回调函数中返回 `false` 可终止文件读取，绑定事件的同时需要将`use-before-read`属性设置为`true` | `event.detail.file`: 当前读取的文件，`event.detail.callback`: 回调函数，调用`callback(false)`终止文件读取 |
-| bind:after-read | 文件读取完成后 | `event.detail.file`: 当前读取的文件 |
+| bind:file-before | 文件读取前，在回调函数中返回 `false` 可终止文件读取，绑定事件的同时需要将`use-file-before`属性设置为`true` | `event.detail.file`: 当前读取的文件，`event.detail.callback`: 回调函数，调用`callback(false)`终止文件读取 |
+| bind:post-before | 文件读取完成后，上传前 | `event.detail.file`: 当前读取的文件 |
+| bind:post-before | 文件上传成功后 | `event.detail.file`: 当前读取的文件 |
 | bind:oversize | 文件超出大小限制 | - |
-| bind:click-preview | 点击预览图片 | `event.detail.index`: 点击图片的序号值 |
+| bind:preview | 点击预览图片 | `event.detail.index`: 点击图片的序号值 |
 | bind:delete | 删除图片 | `event.detail.index`: 删除图片的序号值 |

@@ -5,18 +5,24 @@
     <!-- 预览样式 -->
     <view
       wx:if="{{ previewImage }}"
-      wx:for="{{ lists  }}"
+      wx:for="{{ dataSource  }}"
       wx:key="index"
       class="mc-uploader__preview"
     >
+      <view 
+        wx:if="{{item.uuid}}"
+        style="display: flex; align-items: center; justify-content: center; width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
+      >
+        <mc-loading type="circular" color="#1989fa"/>
+      </view>
       <image
-        wx:if="{{ item.isImage }}"
+        wx:elif="{{ mode === 'image' }}"
         mode="{{ imageFit }}"
-        src="{{ item.url || item.path }}"
-        alt="{{ item.name || ('图片' + index) }}"
+        src="{{ item }}"
+        alt="{{ '图片' + index }}"
         class="mc-uploader__preview-image"
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
-        data-url="{{ item.url || item.path }}"
+        data-url="{{ item }}"
         bind:tap="doPreviewImage"
       />
       <view
@@ -28,7 +34,7 @@
         <view class="mc-uploader__file-name mc-ellipsis">{{ item.name || item.url || item.path }}</view>
       </view>
       <mc-icon
-        wx:if="{{ deletable }}"
+        wx:if="{{ deletable && !item.uuid }}"
         name="clear"
         class="mc-uploader__preview-delete"
         data-index="{{ index }}"

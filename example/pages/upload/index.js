@@ -2,7 +2,7 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    fileList: [],
+    fileList1: [],
     fileList2: [
       { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
       { url: 'https://img.yzcdn.cn/vant/tree.jpg' }
@@ -26,10 +26,10 @@ Page({
   },
 
   afterRead(event) {
-    const { file, name } = event.detail;
+    const { url, name } = event.detail;
     const fileList = this.data[`fileList${name}`];
 
-    this.setData({ [`fileList${name}`]: fileList.concat(file) });
+    this.setData({ [`fileList${name}`]: fileList.concat(url) });
   },
 
   oversize() {

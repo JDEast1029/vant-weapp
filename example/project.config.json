@@ -332,8 +332,8 @@
 				},
 				{
 					"id": -1,
-					"name": "uploader",
-					"pathName": "pages/uploader/index",
+					"name": "upload",
+					"pathName": "pages/upload/index",
 					"query": "",
 					"scene": null
 				},

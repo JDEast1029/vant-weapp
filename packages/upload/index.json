@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mc-icon": "../icon/index"
+    "mc-icon": "../icon/index",
+    "mc-loading": "../loading/index"
   }
 }

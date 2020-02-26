@@ -10,6 +10,9 @@ interface File {
 
 const IMAGE_EXT = ['jpeg', 'jpg', 'gif', 'png', 'svg'];
 
+const now = +(new Date());
+let index = 0;
+
 export function isImageUrl(url: string): boolean {
   return IMAGE_EXT.some(ext => url.indexOf(`.${ext}`) !== -1);
 }
@@ -36,3 +39,5 @@ export function isVideo(
 ): res is WechatMiniprogram.ChooseVideoSuccessCallbackResult {
   return accept === 'video';
 }
+
+export const getUid = (comp?: string, timestamp?: boolean) => `mc${`${comp ? `-${comp}` : ''}`}${timestamp ? `-${now}` : ''}-${++index}`;

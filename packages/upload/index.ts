@@ -1,15 +1,20 @@
 import { McComponent } from '../common/component';
-import { isImageFile, isVideo } from './utils';
+import { isImageFile, isVideo, getUid } from './utils';
 
+interface HTTPResult {
+  data: string;
+}
 McComponent({
   props: {
     disabled: Boolean,
     multiple: Boolean,
     uploadText: String,
-    useBeforeRead: Boolean,
+    useFileBefore: Boolean,
+    usePostBefore: Boolean,
+    usePostAfter: Boolean,
     previewSize: {
       type: null,
-      value: 90
+      value: 76
     },
     name: {
       type: [Number, String],
@@ -19,6 +24,20 @@ McComponent({
       type: String,
       value: 'image'
     },
+    mode: {
+      type: String,
+      value: 'image',
+    },
+    url: String,
+    headers: Object,
+    extra: {
+      type: Object,
+      value: {}
+    },
+    uploadName: {
+      type: String,
+      value: 'file'
+    },
     sizeType: {
       type: Array,
       value: ['original', 'compressed']
@@ -27,16 +46,16 @@ McComponent({
       type: Array,
       value: ['album', 'camera']
     },
-    fileList: {
+    dataSource: {
       type: Array,
       value: [],
-      observer: 'formatFileList'
+      observer: 'formatDataSource'
     },
     maxSize: {
       type: Number,
       value: Number.MAX_VALUE
     },
-    maxCount: {
+    max: {
       type: Number,
       value: 100
     },
@@ -54,7 +73,7 @@ McComponent({
     },
     imageFit: {
       type: String,
-      value: 'scaleToFill'
+      value: 'aspectFit'
     },
     camera: {
       type: String,
@@ -73,18 +92,13 @@ McComponent({
   data: {
     lists: [],
     computedPreviewSize: '',
-    isInCount: true
+    isInCount: true,
+    uploadTask: {}
   },
-
   methods: {
-    formatFileList() {
-      const { fileList = [], maxCount } = this.data;
-      const lists = fileList.map(item => ({
-        ...item,
-        isImage:
-          typeof item.isImage === 'undefined' ? isImageFile(item) : item.isImage
-      }));
-      this.setData({ lists, isInCount: lists.length < maxCount });
+    formatDataSource() {
+      const { dataSource = [], max } = this.data;
+      this.setData({ dataSource, isInCount: dataSource.length < max });
     },
 
     startUpload() {
@@ -92,20 +106,20 @@ McComponent({
       const {
         name = '',
         capture,
-        maxCount,
+        max,
         multiple,
         maxSize,
         accept,
         sizeType,
-        lists,
+        dataSource,
         camera,
         compressed,
         maxDuration,
-        useBeforeRead = false // 是否定义了 beforeRead
+        useFileBefore = false // 是否定义了 beforeRead
       } = this.data;
 
       let chooseFile = null;
-      const newMaxCount = maxCount - lists.length;
+      const newMaxCount = max - dataSource.length;
       // 设置为只选择图片的时候使用 chooseImage 来实现
       if (accept === 'image') {
         chooseFile = new Promise((resolve, reject) => {
@@ -152,10 +166,14 @@ McComponent({
             if (isVideo(res, accept)) {
               file = {
                 path: res.tempFilePath,
+                uuid: getUid(),
                 ...res
               };
             } else {
-              file = multiple ? res.tempFiles : res.tempFiles[0];
+              file = (res.tempFiles || []).map((it) => ({
+                ...it,
+                uuid: getUid()
+              }));
             }
 
             // 检查文件大小
@@ -171,25 +189,108 @@ McComponent({
             }
 
             // 触发上传之前的钩子函数
-            if (useBeforeRead) {
-              this.$emit('before-read', {
+            if (useFileBefore) {
+              this.$emit('file-before', {
                 file,
                 name,
                 callback: (result: boolean) => {
                   if (result) {
                     // 开始上传
-                    this.$emit('after-read', { file, name });
+                    this.postBefore(file, name);
                   }
                 }
               });
             } else {
-              this.$emit('after-read', { file, name });
+              this.postBefore(file, name);
             }
           }
         )
         .catch(error => {
           this.$emit('error', error);
         });
+    },
+
+    postBefore(files, name) {
+      const { usePostBefore } = this.data;
+      if (usePostBefore) {
+        this.$emit('post-before', { files,
+          name,
+          callback: (result: boolean) => {
+            if (result) {
+              files.forEach((file) => {
+                this.upload(file, name);
+              });
+            }
+          }
+        });
+      } else {
+        files.forEach((file) => {
+          this.upload(file, name);
+        });
+      }
+    },
+
+    upload(file, name) {
+      return new Promise((resolve, reject) => {
+        this.setData({
+          dataSource: [...this.data.dataSource, {
+            uuid: file.uuid
+          }]
+        });
+        const task = wx.uploadFile({
+          url: this.data.url,
+          header: {
+            ...this.data.headers
+          },
+          filePath: file.path,
+          formData: this.data.exrta,
+          name: this.data.uploadName,
+          success: resolve,
+          fail: reject,
+          complete: () => {
+            delete this.data.uploadTask[file.uuid];
+            let arr = [...this.data.dataSource];
+            arr = arr.filter((it) => !it.uuid);
+            this.setData({
+              dataSource: arr
+            });
+          }
+        });
+        this.setData({
+          uploadTask: {
+            ...this.data.uploadTask,
+            [file.uuid]: task
+          }
+        });
+        task.onProgressUpdate((res) => {
+          this.$emit('progress', res);
+        });
+      }).then((res: HTTPResult) => {
+        const { usePostAfter } = this.data;
+        const { data, status, msg } = JSON.parse(res.data);
+        if (status === 1) {
+          if (usePostAfter) {
+            this.$emit('post-after', {
+              data,
+              name,
+              callback: (result: any) => {
+                this.$emit('change', { ...result, name });
+              }
+            });
+          } else {
+            this.$emit('change', { ...data, name });
+          }
+        } else {
+          wx.showToast({
+            title: msg,
+            duration: 2000,
+            icon: 'none'
+          });
+          this.$emit('error', { msg });
+        }
+      }).catch((error) => {
+        this.$emit('error', error);
+      });
     },
 
     deleteItem(event) {
@@ -200,11 +301,9 @@ McComponent({
     doPreviewImage(event) {
       if (!this.data.previewFullImage) return;
       const curUrl = event.currentTarget.dataset.url;
-      const images = this.data.lists
-        .filter(item => item.isImage)
-        .map(item => item.url || item.path);
+      const images = this.data.dataSource;
 
-      this.$emit('click-preview', { url: curUrl, name: this.data.name });
+      this.$emit('preview', { url: curUrl, name: this.data.name });
 
       wx.previewImage({
         urls: images,

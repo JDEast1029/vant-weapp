@@ -1,8 +1,10 @@
 <demo-block title="基础用法" padding>
   <van-upload
     name="1"
-    file-list="{{ fileList1 }}"
-    bind:after-read="afterRead"
+    url="https://gateway-mobile.wyawds.com"
+    headers=""
+    dataSource="{{ fileList1 }}"
+    bind:change="afterRead"
     bind:delete="delete"
     bind:click-preview="clickPreview"
   />
