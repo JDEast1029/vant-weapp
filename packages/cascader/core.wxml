@@ -28,5 +28,5 @@
     <mc-view 
         dataSource="{{ dataSource }}"
         loadData="{{ loadData }}"
-        changeOnSelect="{{ changeOnSelect }}"></mv-view>
+        changeOnSelect="{{ changeOnSelect }}"></mc-view>
 </mc-popup>
