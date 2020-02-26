@@ -7,14 +7,16 @@
                 wx:for-item="item"
                 wx:for-index="index"
                 class="{{ currentIndex === index ? 'is-active' : '' }} mc-cascader-view__label"
-                bindtap="currentIndex = index"
+                data-index="{{ index }}"
+                bindtap="handleSetCurrentIndex"
             >
                 {{ label[index] }}
             </view>
             <view 
                 wx:if="hasChildren" 
                 class="{{ currentIndex === currentValue.length ? 'is-active': '' }} mc-cascader-view__label"
-                bindtap="currentIndex = currentValue.length"
+                data-index="{{ currentValue.length }}"
+                bindtap="handleSetCurrentIndex"
             >
                 请选择
             </view>

@@ -16,5 +16,5 @@
         showToolbar="{{ showToolbar }}"
         okText="{{ okText }}"
         value="{{ value }}"
-        loadData="{{ loadData }}"">
+        loadData="{{ loadData }}" />
 </view>
