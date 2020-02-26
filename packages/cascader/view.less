@@ -1,0 +1,26 @@
+.mc-cascader-view {
+    overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 65vh;
+	font-size: 14px;
+    color: #000;
+    &__wrapper {
+        margin-top: 30px;
+		padding: 0 12px;
+		border-bottom: 1px solid #eee;
+    }
+    &__label {
+        display: inline-block;
+		padding-bottom: 12px;
+		font-size: 14px;
+        color: #000;
+        &:not(:first-child) {
+			margin-left: 30px;
+		}
+    }
+    .is-active {
+        color: #5495f6;
+        border-bottom: 2px solid #5495f6;
+    }
+}

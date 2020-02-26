@@ -1,19 +1,19 @@
-<view class="vcm-cascader-view">
+<view class="mc-cascader-view">
     <slot label="{{ label }}" current="{{ currentIndex }}" name="header">
-        <view class="vcm-cascader-view__wrapper">
+        <view class="mc-cascader-view__wrapper">
             <view
                 wx:for="{{ currentValue }}"
                 wx:key="item"
                 wx:for-item="item"
                 wx:for-index="index"
-                class="{{ currentIndex === index ? 'is-active' : '' }} vcm-cascader-view__label"
+                class="{{ currentIndex === index ? 'is-active' : '' }} mc-cascader-view__label"
                 bindtap="currentIndex = index"
             >
                 {{ label[index] }}
             </view>
             <view 
                 wx:if="hasChildren" 
-                class="{{ currentIndex === currentValue.length ? 'is-active': '' }} vcm-cascader-view__label"
+                class="{{ currentIndex === currentValue.length ? 'is-active': '' }} mc-cascader-view__label"
                 bindtap="currentIndex = currentValue.length"
             >
                 请选择

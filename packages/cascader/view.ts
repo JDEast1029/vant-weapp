@@ -39,25 +39,32 @@ McComponent({
         currentIndex: 0,
         currentValue: [],
         rebuildData: [],
-        hasChildren: true
-    },
+		hasChildren: true,
+		colValue: '',
+		colData: [],
+		label: [],
+	},
+	
+	observers: {
+		'currentValue, currentIndex': function(currentValue: [], currentIndex: number) {
+			this.setData({
+				colValue: currentValue[currentIndex]
+			})
+		},
+		'rebuildData, currentIndex': function(rebuildData: [], currentIndex: number) {
+			this.setData({
+				colData: rebuildData[currentIndex]
+			})
+		},
+		'currentValue': function(currentValue: any) {
+			const { label = [] } = this.getInfo(currentValue);
+			this.setData({
+				label: label.filter((i) => i)
+			})
+		}
+	},
 
     methods: {
-        // 计算属性 TODO:ybb  不能用observers, 怎么拿到colValue
-        // colValue() {
-		// 	return this.data.currentValue[this.data.currentIndex];
-		// },
-		// colData() {
-		// 	return this.data.rebuildData[this.data.currentIndex];
-		// },
-		// /**
-		//  * TODO: 初始化时，存在查找耗时
-		//  */
-		// label() {
-		// 	const { label = [] } = this.getInfo(this.data.currentValue);
-		// 	return label.filter(i => i);
-        // },
-        
         // 方法
         /**
 		 * 重置index
@@ -77,7 +84,7 @@ McComponent({
 			// }
 			let value = this.data.currentValue.slice(-1)[0];
 			let colIndex = this.data.currentValue.length - 1;
-			let rowIndex = this.data.rebuildData[colIndex].findIndex(i => i.value === value);
+			let rowIndex = this.data.rebuildData[colIndex].findIndex((i: { value: any; }) => i.value === value);
 			this.handleChange({ value, rowIndex, colIndex, sync: false });
 		},
 		/**
@@ -85,7 +92,7 @@ McComponent({
 		 * @param  {Array} source 数据源
 		 */
 		makeData(source) {
-			let data = source && source.map(i => ({
+			let data = source && source.map((i: { value: any; label: any; children: string | any[]; }) => ({
 				value: i.value,
 				label: i.label,
 				hasChildren: !!(i.children && (i.children.length > 0 || this.data.loadData)),
@@ -100,9 +107,9 @@ McComponent({
 		makeRebuildData() {
 			if (!this.data.dataSource.length) return [];
 			let temp = this.data.dataSource;
-			let data = this.data.currentValue.slice(0).reduce((pre, cur, index) => {
+			let data = this.data.currentValue.slice(0).reduce((pre: { [x: string]: any; }, cur: any, index: string | number) => {
 				pre[index] = this.makeData(temp);
-				temp = ((temp && temp.find(i => i.value == cur)) || {}).children;
+				temp = ((temp && temp.find((i: { value: any; }) => i.value == cur)) || {}).children;
 				return pre; 
 			}, []);
 			temp && data.push(this.makeData(temp));
@@ -126,8 +133,8 @@ McComponent({
 				/**
 				 * TODO: 提前缓存index
 				 */
-				let children = this.data.currentValue.reduce((pre, cur) => {
-					let target = pre.find(i => i.value == cur) || {};
+				let children = this.data.currentValue.reduce((pre: any[], cur: any) => {
+					let target = pre.find((i: { value: any; }) => i.value == cur) || {};
 					return target.children ? target.children : undefined;
 				}, this.data.dataSource);
 				/**

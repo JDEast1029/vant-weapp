@@ -18,11 +18,16 @@ McComponent({
             type: Number,
             observer: function(newVal, oldVal) {
                 // 滚动到初始位置
-                let instance = this.data.dataSource.findIndex(i => this.data.value == i.value);
-                // TODO: ybb
+                this.setData({
+                    contentActive: 'top'
+                });
+                // let instance = this.data.dataSource.findIndex(i => this.data.value == i.value);
                 // $(this.$el).scrollIntoView({ to: instance * 40 });
             }
 		}
+    },
+    data: {
+        contentActive: ''
     },
     methods: {
         handleClick(value, rowIndex) {

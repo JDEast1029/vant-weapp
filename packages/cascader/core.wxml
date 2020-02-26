@@ -3,23 +3,24 @@
   round
   position="bottom"
   bind:close="handleClose"
+  class="mc-cascader-popup"
 >
-     <view wx:if="showToolbar" class="vcm-picker-popup__header">
+     <view wx:if="showToolbar" class="mc-cascader-popup__header">
         <view 
             wx:if="cancelText" 
-            class="vcm-picker-popup__item is-left"
+            class="mc-cascader-popup__item is-left"
             bindtap="handleCancel"
             data-type="cancel"
         >{{ cancelText }}</view>
 
         <!-- title -->
         <view 
-            class="vcm-picker-popup__item is-title"
+            class="mc-cascader-popup__item is-title"
         >{{ title }}</view>
 
         <view 
             wx:if="okText" 
-            class="vcm-picker-popup__item is-right" 
+            class="mc-cascader-popup__item is-right" 
             bindtap="handleOk"
             data-type="ok"
         >{{ okText }}</view>

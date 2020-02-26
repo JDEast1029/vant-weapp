@@ -28,7 +28,7 @@ export interface McComponentOptions<Data, Props, Methods, Instance> {
     [componentName: string]: Weapp.RelationOption<Instance>;
   };
   methods?: Methods & Weapp.MethodOption<Instance>;
-
+  observers?: object,
   // lifetimes
   beforeCreate?: (this: Instance) => void;
   created?: (this: Instance) => void;
