@@ -1,0 +1,26 @@
+<scroll-view 
+  scroll-y 
+  scroll-with-animation 
+  style="height: 100%;" 
+  class="mc-cascader-col"
+  scroll-into-view="{{ contentActive }}" >
+    <view 
+      wx:for="{{ dataSource }}"
+      wx:for-item="item"
+      wx:for-index="i"
+      wx:key="i"
+      class="{{ value === item.value ? 'is-select' : '' }} mc-cascader-col__item"
+      data-value="{{ item.value }}"
+      data-rowIndex="{{ i }}"
+      bindtap="onClick"
+      id="{{ index === i ? 'top' : '' }}"
+    >
+      <span class="mc-cascader-col__label">{{ item.label }}</span>
+      <mc-loading wx:if="value === item.value && item.loading" size="16px"/>
+      <mc-icon 
+        wx:elif="value === item.value" 
+        class="mc-cascader-col__select" 
+        name="success" 
+        color="green" />
+    </view>
+</scroll-view>

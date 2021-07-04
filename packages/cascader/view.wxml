@@ -1,0 +1,31 @@
+<view class="mc-cascader-view">
+    <slot label="{{ label }}" current="{{ currentIndex }}" name="header">
+        <view class="mc-cascader-view__wrapper">
+            <view
+                wx:for="{{ currentValue }}"
+                wx:key="item"
+                wx:for-item="item"
+                wx:for-index="index"
+                class="{{ currentIndex === index ? 'is-active' : '' }} mc-cascader-view__label"
+                data-index="{{ index }}"
+                bindtap="handleSetCurrentIndex"
+            >
+                {{ label[index] }}
+            </view>
+            <view 
+                wx:if="hasChildren" 
+                class="{{ currentIndex === currentValue.length ? 'is-active': '' }} mc-cascader-view__label"
+                data-index="{{ currentValue.length }}"
+                bindtap="handleSetCurrentIndex"
+            >
+                请选择
+            </view>
+        </view>
+    </slot>
+    <mc-col
+        value="{{ colValue }}"
+        data-source="{{ colData }}"
+        index="{{ currentIndex }}"
+        bind:change="handleChange"
+    />
+</view>

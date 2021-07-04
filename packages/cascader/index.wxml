@@ -1,0 +1,22 @@
+<view class="custom-class mc-picker" bindtap="handleClick">
+    <slot 
+        wx:if="useSlot" 
+    />
+    <mc-cell 
+        wx:else 
+        title="{{ label }}"
+        value="{{ formatterValue }}"
+        is-link
+    />
+    <mc-core 
+        visible="{{ visible }}"
+        dataSource="{{ dataSource }}"
+        title="{{ title }}"
+        cancelText="{{ cancelText }}"
+        showToolbar="{{ showToolbar }}"
+        okText="{{ okText }}"
+        value="{{ value }}"
+        hasLoadData="{{ hasLoadData }}"
+        bindclose="handleClose"
+        bindCancel="handleCancel" />
+</view>

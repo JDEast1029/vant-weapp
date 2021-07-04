@@ -1,0 +1,32 @@
+<mc-popup
+  show="{{ isActive }}"
+  round
+  position="bottom"
+  bind:close="handleClose"
+  class="mc-cascader-popup"
+>
+     <view wx:if="showToolbar" class="mc-cascader-popup__header">
+        <view 
+            wx:if="cancelText" 
+            class="mc-cascader-popup__item is-left"
+            bindtap="handleCancel"
+            data-type="cancel"
+        >{{ cancelText }}</view>
+
+        <!-- title -->
+        <view 
+            class="mc-cascader-popup__item is-title"
+        >{{ title }}</view>
+
+        <view 
+            wx:if="okText" 
+            class="mc-cascader-popup__item is-right" 
+            bindtap="handleOk"
+            data-type="ok"
+        >{{ okText }}</view>
+    </view>
+    <mc-view 
+        dataSource="{{ dataSource }}"
+        hasLoadData="{{ hasLoadData }}"
+        changeOnSelect="{{ changeOnSelect }}"></mc-view>
+</mc-popup>

@@ -38,3 +38,36 @@ export function addUnit(value?: string | number): string | undefined {
   value = String(value);
   return isNumber(value) ? `${value}px` : value;
 }
+
+/**
+* 获取源数据
+* [value, label, children]
+* value: Number or String -> '11' == 11
+*/
+export function getSelectedData(value = [], source = []) {
+  let label = [];
+  let data = [];
+
+  if (source.length !== 0) {
+    if (source.some(i => !!i.children) || !(source[0] instanceof Array)) { // 联动
+      value.reduce((pre, cur) => {
+        let target = pre.find(it => it.value == cur) || {};
+        data.push(target);
+        label.push(target.label);
+        return target.children || [];
+      }, source);
+    } else {
+      value.forEach((item, index) => {
+        let target = source[index].find(it => it.value == item);
+        data.push(target);
+        label.push(target.label);
+      });
+    }
+
+  }
+  return JSON.parse(JSON.stringify({
+    value,
+    label,
+    data
+  }));
+};

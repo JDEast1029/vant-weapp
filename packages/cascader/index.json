@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+      "mc-cell": "../cell/index",
+      "mc-core": "../core"
+    }
+  }
+  
